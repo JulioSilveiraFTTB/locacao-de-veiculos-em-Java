@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Veiculos implements IVeiculos {
-    private static List<Veiculo> listaDeVeiculos = new ArrayList<>();
+    private final List<Veiculo> listaDeVeiculos = new ArrayList<>();
 
     public void add(Veiculo veiculo) {
         if(veiculo != null){

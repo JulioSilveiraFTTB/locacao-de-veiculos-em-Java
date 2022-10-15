@@ -32,7 +32,7 @@ public class Clientes implements IClientes {
     //         }
     //     }
 
-    public String getInfo(long cpf){
+    public String getInfo(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
                 return cliente.toString();
@@ -41,7 +41,7 @@ public class Clientes implements IClientes {
         return null;
     }
 
-    public String getInfo(){
+    public String getInfo() {
         for (Cliente cliente : clientes) {
             if (cliente != null) {
                 return cliente.toString();
@@ -50,7 +50,7 @@ public class Clientes implements IClientes {
         return null;
     }
 
-    public String getResumoInfo(){
+    public String getResumoInfo() {
         for (Cliente cliente : clientes) {
             if (cliente != null) {
                 // criar nova String no Objeto Cliente para diferenciar Info normal de resumida
