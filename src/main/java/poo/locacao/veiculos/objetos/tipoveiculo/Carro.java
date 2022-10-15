@@ -33,4 +33,10 @@ public class Carro extends Veiculo {
              + "Consumo: %.2f km/L" + consumo + "\n"
              + "Ar-condicionado: "; // enum?
     }
+
+    @Override
+    public String informacoes() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

@@ -35,6 +35,9 @@ public abstract class Veiculo {
         this.diaria = diaria;
     }
 
+    public abstract String informacoes();
+
+    @Override
     public String toString(){
         return "Informações do veículo:\n"
              + "Placa: " + placa + "\n"

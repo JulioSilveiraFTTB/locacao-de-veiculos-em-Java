@@ -29,4 +29,10 @@ public class Onibus extends Veiculo {
               + "Wi-Fi: " + "\n"
               + "Ar-Condicionado: ";
     }
+
+    @Override
+    public String informacoes() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

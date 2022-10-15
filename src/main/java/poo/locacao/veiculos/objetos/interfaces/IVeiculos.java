@@ -1,7 +1,6 @@
 package poo.locacao.veiculos.objetos.interfaces;
 
 import poo.locacao.veiculos.objetos.Veiculo;
-
 /**
  * Interface que permite a manipulação de um conjunto de veículos.
  * @author Aline
@@ -40,6 +39,7 @@ public interface IVeiculos {
      * Captura uma String com a placa, o ano e o valor da diaria de todos os veiculos.
      * @return String com a placa, o ano e o valor da diaria de todos os veiculos 
      * ou null caso não exista nenhum veiculo.
+     * @throws Exception
      */
     public String getResumoInfo();
        
