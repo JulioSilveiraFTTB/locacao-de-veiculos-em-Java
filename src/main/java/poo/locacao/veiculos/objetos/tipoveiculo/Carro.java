@@ -1,7 +1,6 @@
 package poo.locacao.veiculos.objetos.tipoveiculo;
 
 import poo.locacao.veiculos.objetos.Veiculo;
-
 public class Carro extends Veiculo {
     private final int nPassageiros;
     private final int portas;
@@ -25,5 +24,13 @@ public class Carro extends Veiculo {
 
     public Double getConsumo(){
         return consumo;
+    }
+
+    public String toString(){
+        return super.toString() +
+               "Número de passageiros: " + nPassageiros + "\n"
+             + "Número de portas: " + portas + "\n"
+             + "Consumo: %.2f km/L" + consumo + "\n"
+             + "Ar-condicionado: "; // enum?
     }
 }
