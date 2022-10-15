@@ -61,5 +61,12 @@ public class Locacao {
         this.dataFinal = dataFinal;
     }
 
-    
+    public String toString(){
+        return "Informações da locação: \nCódigo: " + codigo + "\n"
+               + "Cliente: " + cliente.getNome() + "\n"
+               + "Veículo: " + veiculo + "\n"
+               + "Diária: " + diaria + "\n"
+               + "Data inicial: " + dtf.format(dataInicial) + "\n"
+               + "Data final: " + dtf.format(dataFinal) + "\n";
+    }
 }
