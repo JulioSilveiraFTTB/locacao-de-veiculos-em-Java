@@ -1,6 +1,5 @@
 package poo.locacao.veiculos.objetos;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
@@ -25,4 +24,42 @@ public class Locacao {
         this.dataInicial = dataInicial;
         this.dataFinal = dataFinal;
     }
+
+    public Integer getCodigo(){
+        return codigo;
+    }
+
+    public Cliente getCliente(){
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+
+    public Veiculo getVeiculo(){
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo){
+        this.veiculo = veiculo;
+    }
+
+    public Double getDiaria(){
+        return diaria;
+    }
+
+    public void setDiaria(Double diaria){
+        this.diaria = diaria;
+    }
+
+    public LocalDate getDataFinal(){
+        return dataFinal;
+    }
+
+    public void setDataFinal(LocalDate dataFinal){
+        this.dataFinal = dataFinal;
+    }
+
+    
 }
