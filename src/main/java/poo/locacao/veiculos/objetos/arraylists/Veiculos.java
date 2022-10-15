@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Veiculos implements IVeiculos {
-    private static ArrayList<Veiculo> listaDeVeiculos = new ArrayList<>();
+    private static List<Veiculo> listaDeVeiculos = new ArrayList<>();
 
     public void add(Veiculo veiculo) {
         if(veiculo != null){
@@ -25,26 +25,51 @@ public class Veiculos implements IVeiculos {
     }
 
     public String getInfo(String placa) {
-        Veiculo veiculo = get(placa);
+        for (Veiculo veiculo : listaDeVeiculos){
+            if(veiculo.getPlaca().equals(placa)){
+                return veiculo.toString();
+            }
+        }
+        return null;
+    }
 
-        if(veiculo != null){
-            return veiculo.toString();
+    public String getInfo() {
+        for (Veiculo veiculo : listaDeVeiculos){
+            if(veiculo != null){
+                return veiculo.toString();
+            }
         }
         return null;
     }
 
     public String getResumoInfo() {
-        String dado = "";
-
-        for(Veiculo veiculo : listaDeVeiculos){
-            dado = veiculo.toString();
+        for (Veiculo veiculo : listaDeVeiculos){
+            if(veiculo != null){
+                // substituir toString por algo reduzido
+                return veiculo.toString();
+            }
         }
-
-        if(dado != ""){
-            return dado;
-        }
+        return null;
     }
 
+    public boolean remove(String placa) {
+        for (Veiculo veiculo : listaDeVeiculos) {
+            if (veiculo.getPlaca().equals(placa)) {
+                listaDeVeiculos.remove(veiculo);
+                return true;
+            }
+        }
+        return false;
+    }
 
-
+    public boolean existe(String placa) {
+        for (Veiculo veiculo : listaDeVeiculos) {
+            if(veiculo.getPlaca().equals(placa)) {
+                listaDeVeiculos.remove(veiculo);
+                return true;
+            }
+        }
+        return false;
+    }
 }
+

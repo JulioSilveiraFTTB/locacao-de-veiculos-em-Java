@@ -16,44 +16,53 @@ public class Clientes implements IClientes {
         }
     }
 
-    public Cliente get(long cpf){
+    @Override
+    public Cliente get(long CPF) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    // public Cliente get(long cpf){
+    //     for (Cliente cliente : clientes) {
+    //         if (cliente.getCpf() == cpf) {
+    //             return cliente;
+    //         } else if (cliente.getCpf() =!) {
+    //             return null;
+    //         }
+    //         }
+    //     }
+
+    public String getInfo(long cpf){
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
-                return cliente;
-            }
-        }
-    }
-
-    public String getInfo(long cpf){
-        for (Cliente cliente : clientes) {
-            if (cliente.getCpf().equals(cpf)) {
                 return cliente.toString();
             }
         }
+        return null;
     }
 
-    public String getInfo(long cpf){
+    public String getInfo(){
         for (Cliente cliente : clientes) {
-            if (cliente.getCpf().equals(cpf)) {
+            if (cliente != null) {
                 return cliente.toString();
             }
         }
+        return null;
     }
 
-    public boolean set(long cpf, Cliente clienteModificado) {
+    public String getResumoInfo(){
         for (Cliente cliente : clientes) {
-            if (cliente.getCpf().equals(cpf)) {
-                clientes.remove(cliente);
-                clientes.add(clienteModificado);
-                return true;
+            if (cliente != null) {
+                // criar nova String no Objeto Cliente para diferenciar Info normal de resumida
+                return cliente.toString();
             }
         }
-        return false;
+        return null;
     }
 
     public boolean remove(long cpf) {
         for (Cliente cliente : clientes) {
-            if (cliente.getCpf().equals(cpf)) {
+            if (cliente.getCpf() == cpf) {
                 clientes.remove(cliente);
                 return true;
             }
@@ -63,7 +72,7 @@ public class Clientes implements IClientes {
 
     public boolean existe(long cpf) {
         for (Cliente cliente : clientes) {
-            if (cliente.getCpf().equals(cpf)) {
+            if (cliente.getCpf() == cpf) {
                 return true;
             }
         }
