@@ -7,6 +7,16 @@ public class Carro extends Veiculo {
     private final Double consumo;
     // usar enums para ar condicionado???
 
+    /**
+     * Construtor do objeto Veiculo
+     * 
+     * @param placa
+     * @param ano
+     * @param diaria
+     * @param nPassageiros
+     * @param portas
+     * @param consumo
+     */
     public Carro(String placa, int ano, Double diaria, int nPassageiros, int portas, Double consumo){
         super(placa, ano, diaria);
         this.nPassageiros = nPassageiros;
@@ -14,18 +24,39 @@ public class Carro extends Veiculo {
         this.consumo = consumo;
     }
 
+    /**
+     * Retorna a quantidade de passageiros do carro
+     * 
+     * @param nPassageiros
+     */
     public int getNPassageiros(){
         return nPassageiros;
     }
 
+    /**
+     * Retorna a quantidade de portas do carro
+     * 
+     * @param portas
+     */
     public int getPortas(){
         return portas;
     }
 
+    /**
+     * Retorna o consumo realizado pelo carro
+     * 
+     * @param consumo
+     */
     public Double getConsumo(){
         return consumo;
     }
 
+     /**
+     * Retorna a String completa da locação
+     * 
+     * @return
+     */
+    @Override
     public String toString(){
         return super.toString() +
                "Número de passageiros: " + nPassageiros + "\n"

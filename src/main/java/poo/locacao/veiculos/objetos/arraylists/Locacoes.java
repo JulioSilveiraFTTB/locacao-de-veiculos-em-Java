@@ -7,17 +7,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Locacoes implements ILocacoes {
-    private final List<Locacao> locacoes = new ArrayList<>();
+    /**
+     * Instancia uma nova ArrayList de objetos Locacao
+     */
+    private final List<Locacao> listaDeLocacoes = new ArrayList<>();
 
+    /**
+     * Adiciona a locação a lista de locações
+     */
     public void add(Locacao locacao) {
         if (locacao != null) {
-            locacoes.add(locacao);
+            listaDeLocacoes.add(locacao);
         }
     }
 
     // duvida
+    /**
+     * Retorna uma locação usando o código como parâmetro
+     * 
+     * @param codigo
+     * @return
+     */
     public Locacao get(int codigo) {
-        for (Locacao locacao : locacoes) {
+        for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return locacao;
             }
@@ -25,8 +37,13 @@ public class Locacoes implements ILocacoes {
         return null;
     }
     
+    /**
+     * Apresenta as informações de uma locação através do seu código
+     * 
+     * @return
+     */
     public String getInfo(int codigo) {
-        for (Locacao locacao : locacoes) {
+        for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return locacao.toString();
             }
@@ -34,8 +51,13 @@ public class Locacoes implements ILocacoes {
         return null;
     }
 
+    /**
+     * Apresenta as informações de todos as locações dentro da ArrayList
+     * 
+     * @return
+     */
     public String getInfo() {
-        for (Locacao locacao : locacoes) {
+        for (Locacao locacao : listaDeLocacoes) {
             if (locacao != null) {
                 return locacao.toString();
             }
@@ -43,18 +65,32 @@ public class Locacoes implements ILocacoes {
         return null;
     }
 
+    // getResumoInfo()
+
+    /**
+     * Remove uma locação ao utilizar o seu ID (código) como parâmetro 
+     * 
+     * @param placa
+     * @return
+     */
     public boolean remove(int codigo) {
-        for (Locacao locacao : locacoes) {
+        for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
-                locacoes.remove(locacao);
+                listaDeLocacoes.remove(locacao);
                 return true;
             }
         }
         return false;
     }
 
+    /**
+     * Verifica a existência de uma locação usando o seu ID (código) como parâmetro
+     * 
+     * @param codigo
+     * @return
+     */
     public boolean existe(int codigo) {
-        for (Locacao locacao : locacoes) {
+        for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return true;
             }
@@ -62,7 +98,12 @@ public class Locacoes implements ILocacoes {
         return false;
     }
 
+    /**
+     * Retorna todas as locações incluídas dentro da ArrayList
+     * 
+     * @return
+     */
     public List<Locacao> getLocacoes() {
-        return locacoes;
+        return listaDeLocacoes;
     }
 }

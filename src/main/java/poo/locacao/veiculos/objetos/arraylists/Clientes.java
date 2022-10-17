@@ -7,31 +7,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Clientes implements IClientes {
-    // cria um array list para armazenar os clientes cadastrados
+    /**
+     * Instancia uma nova ArrayList de objetos Locacao
+     */
     private final List<Cliente> clientes = new ArrayList<>();
 
+    /**
+     * Adiciona um cliente a lista de clientes
+     */
     public void add(Cliente cliente) {
         if (cliente != null) {
             clientes.add(cliente);
         }
     }
 
-    @Override
-    public Cliente get(long CPF) {
-        // TODO Auto-generated method stub
+    /**
+     * Retorna um cliente utilizando seu CPF como parâmetro de busca
+     * 
+     * @param cpf
+     * @return
+     */
+    public Cliente get(long cpf){
+        for (Cliente cliente : clientes) {
+            if (cliente.getCpf() == cpf) {
+                return cliente;
+            } 
+        }
         return null;
     }
 
-    // public Cliente get(long cpf){
-    //     for (Cliente cliente : clientes) {
-    //         if (cliente.getCpf() == cpf) {
-    //             return cliente;
-    //         } else if (cliente.getCpf() =!) {
-    //             return null;
-    //         }
-    //         }
-    //     }
-
+    /**
+     * Retorna a informações de um cliente utilizando seu CPF como parâmetro de busca
+     * 
+     * @param cpf
+     * @return
+     */
     public String getInfo(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -41,6 +51,11 @@ public class Clientes implements IClientes {
         return null;
     }
 
+    /**
+     * Retorna as informações de todos os clientes dentro da ArrayList
+     * 
+     * @return
+     */
     public String getInfo() {
         for (Cliente cliente : clientes) {
             if (cliente != null) {
@@ -50,6 +65,11 @@ public class Clientes implements IClientes {
         return null;
     }
 
+    /**
+     * Retorna as informações resumidas de todos os clientes dentro da ArrayList
+     * 
+     * @return
+     */
     public String getResumoInfo() {
         for (Cliente cliente : clientes) {
             if (cliente != null) {
@@ -60,6 +80,12 @@ public class Clientes implements IClientes {
         return null;
     }
 
+    /**
+     * Remove um cliente utilizando seu CPF como parâmetro de busca
+     * 
+     * @param cpf
+     * @return
+     */
     public boolean remove(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -70,6 +96,12 @@ public class Clientes implements IClientes {
         return false;
     }
 
+    /**
+     * Verifica a existência de um cliente utilizando seu CPF como parâmetro
+     * 
+     * @param cpf
+     * @return
+     */
     public boolean existe(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -79,6 +111,11 @@ public class Clientes implements IClientes {
         return false;
     }
 
+    /**
+     * Retorna todos os clientes incluídos dentro da ArrayList
+     * 
+     * @return
+     */
     public List<Cliente> getClientes() {
         return clientes;
     }
