@@ -71,8 +71,6 @@ public abstract class Veiculo {
         this.diaria = diaria;
     }
 
-    public abstract String informacoes();
-
     /**
      * Retorna a String completa do veículo
      * 

@@ -70,7 +70,7 @@ public class Locacoes implements ILocacoes {
     /**
      * Remove uma locação ao utilizar o seu ID (código) como parâmetro 
      * 
-     * @param placa
+     * @param codigo
      * @return
      */
     public boolean remove(int codigo) {

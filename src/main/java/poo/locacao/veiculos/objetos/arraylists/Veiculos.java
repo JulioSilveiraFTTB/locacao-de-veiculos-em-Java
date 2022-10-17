@@ -110,7 +110,7 @@ public class Veiculos implements IVeiculos {
         return false;
     }
 
-    public List<Veiculo> getLocacoes() {
+    public List<Veiculo> getVeiculos() {
         return listaDeVeiculos;
     }
 }

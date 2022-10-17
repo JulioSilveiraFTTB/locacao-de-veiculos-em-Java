@@ -59,10 +59,4 @@ public class Caminhao extends Veiculo {
                "Número de eixos: " + eixos + "\n"
              + "Carga máxima: %.2f TON%n" + carga;
     }
-
-    @Override
-    public String informacoes() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 }
