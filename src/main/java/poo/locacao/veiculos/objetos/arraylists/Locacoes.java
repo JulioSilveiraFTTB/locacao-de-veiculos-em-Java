@@ -10,7 +10,7 @@ public class Locacoes implements ILocacoes {
     /**
      * Instancia uma nova ArrayList de objetos Locacao
      */
-    private final List<Locacao> listaDeLocacoes = new ArrayList<>();
+    private List<Locacao> listaDeLocacoes = new ArrayList<>();
 
     /**
      * Adiciona a locação a lista de locações

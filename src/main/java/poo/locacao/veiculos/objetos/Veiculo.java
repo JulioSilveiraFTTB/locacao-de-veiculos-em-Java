@@ -1,4 +1,5 @@
 package poo.locacao.veiculos.objetos;
+
 public abstract class Veiculo {
     protected String placa;
     protected int ano;
@@ -15,6 +16,15 @@ public abstract class Veiculo {
         this.placa = placa;
         this.ano = ano;
         this.diaria = diaria;
+    }
+
+    /**
+     * Construtor do objeto Veiculo usando apenas a placa como parâmetro
+     * 
+     * @param placa
+     */
+    public Veiculo(String placa){
+        this.placa = placa;
     }
 
     /**
@@ -78,9 +88,9 @@ public abstract class Veiculo {
      */
     @Override
     public String toString(){
-        return "Informações do veículo:\n"
+        return "Informacoes do veiculo:\n"
              + "Placa: " + placa + "\n"
              + "Ano: " + ano + "\n"
-             + "Diária: %2f%n" + getDiaria();
+             + "Diaria: " + getDiaria() + "\n";
     }
 }

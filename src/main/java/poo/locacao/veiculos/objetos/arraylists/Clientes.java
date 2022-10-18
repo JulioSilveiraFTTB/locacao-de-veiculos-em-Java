@@ -10,7 +10,7 @@ public class Clientes implements IClientes {
     /**
      * Instancia uma nova ArrayList de objetos Locacao
      */
-    private final List<Cliente> clientes = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
 
     /**
      * Adiciona um cliente a lista de clientes

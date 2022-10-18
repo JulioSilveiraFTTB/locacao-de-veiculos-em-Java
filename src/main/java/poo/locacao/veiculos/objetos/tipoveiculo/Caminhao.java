@@ -21,6 +21,10 @@ public class Caminhao extends Veiculo {
         this.carga = carga;
     }
 
+    // public Caminhao(String placa) {
+    //     super(placa);
+    // }
+
     /**
      * Retorna a quantidade de eixos do caminhão
      * 
@@ -57,6 +61,6 @@ public class Caminhao extends Veiculo {
     public String toString(){
         return super.toString() +
                "Número de eixos: " + eixos + "\n"
-             + "Carga máxima: %.2f TON%n" + carga;
+             + "Carga máxima: " + carga + " toneladas";
     }
 }

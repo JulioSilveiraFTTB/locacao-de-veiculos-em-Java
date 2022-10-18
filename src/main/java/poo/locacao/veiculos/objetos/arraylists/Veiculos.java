@@ -9,7 +9,7 @@ public class Veiculos implements IVeiculos {
     /**
      * Instancia uma nova ArrayList de objetos Veiculo
      */
-    private final List<Veiculo> listaDeVeiculos = new ArrayList<>();
+    private List<Veiculo> listaDeVeiculos = new ArrayList<>();
 
     /**
      * Adiciona o veiculo a lista de veiculos
@@ -58,7 +58,7 @@ public class Veiculos implements IVeiculos {
     public String getInfo() {
         for (Veiculo veiculo : listaDeVeiculos){
             if(veiculo != null){
-                return veiculo.toString();
+                return listaDeVeiculos.toString();
             }
         }
         return null;
@@ -72,8 +72,7 @@ public class Veiculos implements IVeiculos {
     public String getResumoInfo() {
         for (Veiculo veiculo : listaDeVeiculos){
             if(veiculo != null){
-                // substituir toString por algo reduzido
-                return veiculo.toString();
+                return listaDeVeiculos.toString();
             }
         }
         return null;

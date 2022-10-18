@@ -120,11 +120,11 @@ public class Cliente {
      * @return
      */
     public String toString(){
-        return "Informações do cliente:\n"
+        return "Informacoes do cliente:\n"
              + "Nome: " + nome + "\n"
-             + "Endereço: " + endereco + "\n"
+             + "Endereco: " + endereco + "\n"
              + "CPF: " + cpf + "\n"
              + "CNH: " + cnh + "\n"
-             + "Telefone: " + telefone;
+             + "Telefone: " + telefone + "\n" + "\n";
     }
 }

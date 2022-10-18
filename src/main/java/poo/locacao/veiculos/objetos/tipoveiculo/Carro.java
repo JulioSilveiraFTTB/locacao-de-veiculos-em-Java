@@ -1,11 +1,13 @@
 package poo.locacao.veiculos.objetos.tipoveiculo;
 
 import poo.locacao.veiculos.objetos.Veiculo;
+import poo.locacao.veiculos.objetos.tipoveiculo.enums.ArCondicionado;
+
 public class Carro extends Veiculo {
     private final int nPassageiros;
     private final int portas;
     private final Double consumo;
-    // usar enums para ar condicionado???
+    private final ArCondicionado arCondicionado;
 
     /**
      * Construtor do objeto Veiculo
@@ -17,19 +19,24 @@ public class Carro extends Veiculo {
      * @param portas
      * @param consumo
      */
-    public Carro(String placa, int ano, Double diaria, int nPassageiros, int portas, Double consumo){
+    public Carro(String placa, int ano, Double diaria, int nPassageiros, int portas, Double consumo, ArCondicionado arCondicionado) {
         super(placa, ano, diaria);
         this.nPassageiros = nPassageiros;
         this.portas = portas;
         this.consumo = consumo;
+        this.arCondicionado = arCondicionado;
     }
+
+    // public Carro(String placa) {
+    //     super(placa);
+    // }
 
     /**
      * Retorna a quantidade de passageiros do carro
      * 
      * @param nPassageiros
      */
-    public int getNPassageiros(){
+    public int getNPassageiros() {
         return nPassageiros;
     }
 
@@ -38,7 +45,7 @@ public class Carro extends Veiculo {
      * 
      * @param portas
      */
-    public int getPortas(){
+    public int getPortas() {
         return portas;
     }
 
@@ -47,8 +54,17 @@ public class Carro extends Veiculo {
      * 
      * @param consumo
      */
-    public Double getConsumo(){
+    public Double getConsumo() {
         return consumo;
+    }
+
+    /**
+     * Retorna se o carro tem ar-condicionado ou não
+     * 
+     * @param arCondicionado
+     */
+    public ArCondicionado getArCondicionado() {
+        return arCondicionado;
     }
 
      /**
@@ -57,11 +73,11 @@ public class Carro extends Veiculo {
      * @return
      */
     @Override
-    public String toString(){
+    public String toString() {
         return super.toString() +
-               "Número de passageiros: " + nPassageiros + "\n"
-             + "Número de portas: " + portas + "\n"
-             + "Consumo: %.2f km/L" + consumo + "\n"
-             + "Ar-condicionado: "; // enum?
+               "Numero de passageiros: " + nPassageiros + "\n"
+             + "Numero de portas: " + portas + "\n"
+             + "Consumo: " + consumo + "km/L" + "\n"
+             + "Ar-condicionado: "  + getArCondicionado() + "\n" + "\n";
     }
 }
