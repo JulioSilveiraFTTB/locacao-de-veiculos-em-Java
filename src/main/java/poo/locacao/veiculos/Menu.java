@@ -19,10 +19,9 @@ public class Menu {
         Cor.printf("    3 - Locacoes\n");
         Cor.printf("    0 - Sair\n");
         Cor.printf(Color.YELLOW, "\nDigite uma das opcoes acima: ");
-
         op = in.nextInt();
+        System.out.println("\n");
 
-        do {
             switch (op) {
                 case 1:
                     MenuCliente.areaCliente();
@@ -36,6 +35,5 @@ public class Menu {
                 default:
                     break;
             }
-        } while (op >= 1 && op <=3);
     }
 }

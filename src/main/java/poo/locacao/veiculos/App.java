@@ -12,13 +12,10 @@ import poo.locacao.veiculos.objetos.Cor;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.objetos.arraylists.*;
 
-import java.util.List;
-import java.util.ArrayList;
-
 public class App {
     public static void main(String[] args) {
         System.out.println("Teste... \n" );
-        // Veiculos v = new Veiculos();
+        
         Menu.menuInicial();        
     }
 }
