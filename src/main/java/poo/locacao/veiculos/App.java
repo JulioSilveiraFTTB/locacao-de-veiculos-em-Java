@@ -15,7 +15,6 @@ import poo.locacao.veiculos.objetos.arraylists.*;
 public class App {
     public static void main(String[] args) {
         System.out.println("Teste... \n" );
-        
         Menu.menuInicial();        
     }
 }

@@ -9,9 +9,11 @@ import poo.locacao.veiculos.menus.MenuLocacao;
 import java.util.Scanner;
 
 public class Menu {
+
     public static void menuInicial() {
         int op;
-        Scanner in = new Scanner(System.in);
+        boolean repeat;
+        boolean defaultRepeat;
 
         Cor.printf(Color.PURPLE, "[MENU - LOCADORA DE VEICULOS]\n\n");
         Cor.printf("    1 - Clientes\n");
@@ -19,21 +21,41 @@ public class Menu {
         Cor.printf("    3 - Locacoes\n");
         Cor.printf("    0 - Sair\n");
         Cor.printf(Color.YELLOW, "\nDigite uma das opcoes acima: ");
-        op = in.nextInt();
-        System.out.println("\n");
 
-            switch (op) {
-                case 1:
-                    MenuCliente.areaCliente();
-                    break;
-                case 2:
-                    MenuVeiculo.areaVeiculo();
-                    break;    
-                case 3:
-                    MenuLocacao.areaLocacao();
-                    break;
-                default:
-                    break;
-            }
+        try (Scanner in = new Scanner(System.in)) {
+            do {
+                defaultRepeat = repeat = false;
+                op = in.nextInt();
+                in.nextLine();
+    
+                switch (op) {
+                    case 1:
+                        MenuCliente.areaCliente();
+                        break;
+                    case 2:
+                        MenuVeiculo.areaVeiculo();
+                        break;    
+                    case 3:
+                        MenuLocacao.areaLocacao();
+                        break;
+                    case 0:
+                        Cor.printf(Color.RED, "O programa foi encerrado... \n");
+                        System.exit(0);
+                        break;
+                    default:
+                        Cor.printf(Color.YELLOW, "Digite uma opcao valida! \n");
+                        defaultRepeat = true;
+                        break;
+                }
+            } while (repeat || defaultRepeat);
+        }
+    }   
+
+    public static boolean returnToMenu(Scanner scanner) {
+        Cor.printf(Color.WHITE, "\nDeseja retornar ao menu? (S/N):");
+        Cor.printf(" ");
+        boolean repeat = scanner.next().toLowerCase().equals("s");
+        Cor.clearScreen();
+        return repeat;
     }
 }

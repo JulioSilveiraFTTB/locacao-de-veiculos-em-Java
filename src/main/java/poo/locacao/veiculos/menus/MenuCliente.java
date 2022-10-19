@@ -43,7 +43,11 @@ public class MenuCliente {
         case 6:
             Menu.menuInicial();
             break;
+        case 0:
+            System.exit(0);
+            break;
         default:
+            
             break;
         }
     }
