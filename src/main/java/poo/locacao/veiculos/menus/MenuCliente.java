@@ -2,6 +2,7 @@ package poo.locacao.veiculos.menus;
 
 import poo.locacao.veiculos.objetos.arraylists.*;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
+import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.Cor;
 
 import java.util.Scanner;
@@ -25,16 +26,22 @@ public class MenuCliente {
 
        switch (op) {
         case 1:
+            cadastroCliente(null);
             break;
         case 2:
+            consultaClientePorCpf(null);
             break;    
         case 3:
+            consultaClienteResumidoPorCpf(null);
             break;
         case 4:
+            consultaClientes(null);
             break;
         case 5:
+            removeCliente(null);
             break;
         case 6:
+            Menu.menuInicial();
             break;
         default:
             break;
