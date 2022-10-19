@@ -16,11 +16,11 @@ public class MenuVeiculo {
        boolean defaultRepeat;
        // menu com as opções dos métodos
        Cor.printf(Color.GREEN, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
-       Cor.printf("    1 - Cadastrar novo cliente\n");
-       Cor.printf("    2 - Consultar cliente (por CPF)\n");
-       Cor.printf("    3 - Consultar cliente (por CPF/resumido)\n");
-       Cor.printf("    4 - Consultar lista completa de clientes\n");
-       Cor.printf("    5 - Remover cliente\n");
+       Cor.printf("    1 - Cadastrar novo veiculo\n");
+       Cor.printf("    2 - Consultar veiculo (por placa)\n");
+       Cor.printf("    3 - Consultar veiculos (por placa/resumido)\n");
+       Cor.printf("    4 - Consultar lista completa de veiculos\n");
+       Cor.printf("    5 - Remover veiculo\n");
        Cor.printf("    6 - Retornar ao menu principal\n");
        Cor.printf("    0 - Sair\n");
        Cor.printf(Color.BLUE, "\nDigite uma das opcoes acima: ");
