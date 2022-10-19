@@ -2,12 +2,14 @@ package poo.locacao.veiculos;
 
 import poo.locacao.veiculos.objetos.Cliente;
 import poo.locacao.veiculos.objetos.Veiculo;
+import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.tipoveiculo.Carro;
 import poo.locacao.veiculos.objetos.tipoveiculo.Onibus;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.ArCondicionado;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Categoria;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Wifi;
-
+import poo.locacao.veiculos.objetos.Cor;
+import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.objetos.arraylists.*;
 
 import java.util.List;
@@ -17,15 +19,15 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Teste... \n" );
 
-        Veiculos v = new Veiculos();
+        // Veiculos v = new Veiculos();
 
-        // List<Veiculo> listaDeVeiculos = new ArrayList<>();
-        // List<Cliente> listaDeClientes = new ArrayList<>();
+        // // List<Veiculo> listaDeVeiculos = new ArrayList<>();
+        // // List<Cliente> listaDeClientes = new ArrayList<>();
         
-        Veiculo carro = new Carro("ABC", 2010, 10.0, 4, 2, 10.0, ArCondicionado.SIM);
-        v.add(carro);
-        System.out.println(v.getVeiculos());
-        v.remove("ABC");
+        // Veiculo carro = new Carro("ABC", 2010, 10.0, 4, 2, 10.0, ArCondicionado.SIM);
+        // v.add(carro);
+        // System.out.println(v.getVeiculos());
+        // v.remove("ABC");
 
         // Veiculo carro2 = new Carro("DEF", 2020, 20.0, 4, 4, 15.0, ArCondicionado.NAO);
         // listaDeVeiculos.add(carro2);
@@ -48,7 +50,9 @@ public class App {
         // carro.setDiaria(50.0);
         // listaDeVeiculos.remove(carro2);
         // listaDeVeiculos.remove(onibus);
-        // System.out.println(listaDeVeiculos + "\n");
-        System.out.println(v.getVeiculos());
+        // // System.out.println(listaDeVeiculos + "\n");
+        // System.out.println(v.getVeiculos());
+
+        Menu.menuInicial();        
     }
 }
