@@ -11,7 +11,9 @@ public class MenuCliente {
     Clientes c = new Clientes();
 
     public static void areaCliente() {
-       Scanner in = new Scanner(System.in);
+       int op;
+       boolean repeat;
+       boolean defaultRepeat;
        // menu com as opções dos métodos
        Cor.printf(Color.GREEN, "[CLIENTES - LOCADORA DE VEICULOS]\n\n");
        Cor.printf("    1 - Cadastrar novo cliente\n");
@@ -22,34 +24,45 @@ public class MenuCliente {
        Cor.printf("    6 - Retornar ao menu principal\n");
        Cor.printf("    0 - Sair\n");
        Cor.printf(Color.BLUE, "\nDigite uma das opcoes acima: ");
-       int op = in.nextInt();
+   
+       try (Scanner in = new Scanner(System.in)) {
+        do {
+            defaultRepeat = repeat = false;
+            op = in.nextInt();
+            in.nextLine();
 
-       switch (op) {
-        case 1:
-            cadastroCliente(null);
-            break;
-        case 2:
-            consultaClientePorCpf(null);
-            break;    
-        case 3:
-            consultaClienteResumidoPorCpf(null);
-            break;
-        case 4:
-            consultaClientes(null);
-            break;
-        case 5:
-            removeCliente(null);
-            break;
-        case 6:
-            Menu.menuInicial();
-            break;
-        case 0:
-            System.exit(0);
-            break;
-        default:
-            
-            break;
-        }
+            switch (op) {
+                case 1:
+                    cadastroCliente(null);
+                    break;
+                case 2:
+                    consultaClientePorCpf(null);
+                    break;    
+                case 3:
+                    consultaClientesResumidoPorCpf(null);
+                    break;
+                case 4:
+                    consultaClientes(null);
+                    break;
+                case 5:
+                    removeCliente(null);
+                    break;
+                case 6:
+                    Cor.printf("\n");
+                    Menu.menuInicial();
+                    break;
+                case 0:
+                    Cor.printf(Color.RED, "O programa foi encerrado... \n");
+                    System.exit(0);
+                    break;
+                default:
+                    Cor.printf(Color.CYAN, "Digite uma opcao valida! \n");
+                    defaultRepeat = true;
+                    Menu.returnToMenu(in);
+                    break;
+                }
+        } while (repeat || defaultRepeat);
+       }
     }
 
     public static void cadastroCliente(Clientes c) {

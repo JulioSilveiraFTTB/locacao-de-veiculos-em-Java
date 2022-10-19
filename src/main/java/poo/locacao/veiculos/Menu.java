@@ -43,7 +43,7 @@ public class Menu {
                         System.exit(0);
                         break;
                     default:
-                        Cor.printf(Color.YELLOW, "Digite uma opcao valida! \n");
+                        Cor.printf(Color.CYAN, "Digite uma opcao valida! \n");
                         defaultRepeat = true;
                         break;
                 }
