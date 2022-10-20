@@ -14,7 +14,7 @@ public class MenuVeiculo {
        int op;
        boolean repeat;
        boolean defaultRepeat;
-       // menu com as opções dos métodos
+       // menu com as opï¿½ï¿½es dos mï¿½todos
        Cor.printf(Color.GREEN, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
        Cor.printf("    1 - Cadastrar novo veiculo\n");
        Cor.printf("    2 - Consultar veiculo (por placa)\n");
@@ -56,9 +56,8 @@ public class MenuVeiculo {
                     System.exit(0);
                     break;
                 default:
-                    Cor.printf(Color.CYAN, "Digite uma opcao valida! \n");
-                    defaultRepeat = true;
-                    Menu.returnToMenu(in);
+                    Cor.printf(Color.CYAN, "\n Digite uma opcao valida! \n");
+                    Menu.menuInicial();
                     break;
                 }
         } while (repeat || defaultRepeat);

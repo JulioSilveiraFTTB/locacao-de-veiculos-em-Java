@@ -14,7 +14,7 @@ public class MenuCliente {
        int op;
        boolean repeat;
        boolean defaultRepeat;
-       // menu com as opções dos métodos
+       // menu com as opï¿½ï¿½es dos mï¿½todos
        Cor.printf(Color.GREEN, "[CLIENTES - LOCADORA DE VEICULOS]\n\n");
        Cor.printf("    1 - Cadastrar novo cliente\n");
        Cor.printf("    2 - Consultar cliente (por CPF)\n");
@@ -56,9 +56,9 @@ public class MenuCliente {
                     System.exit(0);
                     break;
                 default:
-                    Cor.printf(Color.CYAN, "Digite uma opcao valida! \n");
+                    Cor.printf(Color.CYAN, "\nDigite uma opcao valida! \n \n");
                     defaultRepeat = true;
-                    Menu.returnToMenu(in);
+                    Menu.menuInicial();
                     break;
                 }
         } while (repeat || defaultRepeat);
@@ -73,7 +73,7 @@ public class MenuCliente {
         c.getInfo(0);   
     }
 
-    public static void consultaClienteResumidoPorCpf(Clientes c) {
+    public static void consultaClientesResumidoPorCpf(Clientes c) {
         c.getResumoInfo();  
     }
 

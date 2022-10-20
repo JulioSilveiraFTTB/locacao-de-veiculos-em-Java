@@ -51,11 +51,11 @@ public class Menu {
         }
     }   
 
-    public static boolean returnToMenu(Scanner scanner) {
-        Cor.printf(Color.WHITE, "\nDeseja retornar ao menu? (S/N):");
-        Cor.printf(" ");
-        boolean repeat = scanner.next().toLowerCase().equals("s");
-        Cor.clearScreen();
-        return repeat;
-    }
+    // public static boolean returnToMenu(Scanner scanner) {
+    //     Cor.printf(Color.WHITE, "\nDeseja retornar ao menu? (S/N):");
+    //     Cor.printf(" ");
+    //     boolean repeat = scanner.next().toLowerCase().equals("s");
+    //     Cor.clearScreen();
+    //     return repeat;
+    // }
 }
