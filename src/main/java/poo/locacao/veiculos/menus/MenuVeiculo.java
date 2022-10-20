@@ -56,7 +56,7 @@ public class MenuVeiculo {
                     System.exit(0);
                     break;
                 default:
-                    Cor.printf(Color.CYAN, "\n Digite uma opcao valida! \n");
+                    Cor.printf(Color.CYAN, "\nDigite uma opcao valida! \n");
                     Menu.menuInicial();
                     break;
                 }

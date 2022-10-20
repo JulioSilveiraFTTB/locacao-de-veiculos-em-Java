@@ -15,6 +15,7 @@ public class Clientes implements IClientes {
     /**
      * Adiciona um cliente a lista de clientes
      */
+    @Override
     public void add(Cliente cliente) {
         if (cliente != null) {
             clientes.add(cliente);
@@ -22,11 +23,12 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Retorna um cliente utilizando seu CPF como parâmetro de busca
+     * Retorna um cliente utilizando seu CPF como parï¿½metro de busca
      * 
      * @param cpf
      * @return
      */
+    @Override
     public Cliente get(long cpf){
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -37,11 +39,12 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Retorna a informações de um cliente utilizando seu CPF como parâmetro de busca
+     * Retorna a informaï¿½ï¿½es de um cliente utilizando seu CPF como parï¿½metro de busca
      * 
      * @param cpf
      * @return
      */
+    @Override
     public String getInfo(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -52,10 +55,11 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Retorna as informações de todos os clientes dentro da ArrayList
+     * Retorna as informaï¿½ï¿½es de todos os clientes dentro da ArrayList
      * 
      * @return
      */
+    @Override
     public String getInfo() {
         for (Cliente cliente : clientes) {
             if (cliente != null) {
@@ -66,10 +70,11 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Retorna as informações resumidas de todos os clientes dentro da ArrayList
+     * Retorna as informaï¿½ï¿½es resumidas de todos os clientes dentro da ArrayList
      * 
      * @return
      */
+    @Override
     public String getResumoInfo() {
         for (Cliente cliente : clientes) {
             if (cliente != null) {
@@ -81,11 +86,12 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Remove um cliente utilizando seu CPF como parâmetro de busca
+     * Remove um cliente utilizando seu CPF como parï¿½metro de busca
      * 
      * @param cpf
      * @return
      */
+    @Override
     public boolean remove(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -97,11 +103,12 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Verifica a existência de um cliente utilizando seu CPF como parâmetro
+     * Verifica a existï¿½ncia de um cliente utilizando seu CPF como parï¿½metro
      * 
      * @param cpf
      * @return
      */
+    @Override
     public boolean existe(long cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf() == cpf) {
@@ -112,7 +119,7 @@ public class Clientes implements IClientes {
     }
 
     /**
-     * Retorna todos os clientes incluídos dentro da ArrayList
+     * Retorna todos os clientes incluï¿½dos dentro da ArrayList
      * 
      * @return
      */

@@ -5,6 +5,7 @@ import poo.locacao.veiculos.objetos.interfaces.IVeiculos;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class Veiculos implements IVeiculos {
     /**
      * Instancia uma nova ArrayList de objetos Veiculo
@@ -14,6 +15,7 @@ public class Veiculos implements IVeiculos {
     /**
      * Adiciona o veiculo a lista de veiculos
      */
+    @Override
     public void add(Veiculo veiculo) {
         if(veiculo != null){
             listaDeVeiculos.add(veiculo);
@@ -21,11 +23,12 @@ public class Veiculos implements IVeiculos {
     }
 
     /**
-     * Retorna um veículo usando a placa como parâmetro
+     * Retorna um veï¿½culo usando a placa como parï¿½metro
      * 
      * @param placa
      * @return
      */
+    @Override
     public Veiculo get(String placa) {
         for (Veiculo veiculo : listaDeVeiculos){
             if(veiculo.getPlaca().equals(placa)){
@@ -36,11 +39,12 @@ public class Veiculos implements IVeiculos {
     }
 
     /**
-     * Apresenta as informações de um veiculo
+     * Apresenta as informaï¿½ï¿½es de um veiculo
      *  
      * @param placa
      * @return
      */
+    @Override
     public String getInfo(String placa) {
         for (Veiculo veiculo : listaDeVeiculos){
             if(veiculo.getPlaca().equals(placa)){
@@ -51,10 +55,11 @@ public class Veiculos implements IVeiculos {
     }
 
     /**
-     * Apresenta as informações de todos os veículos dentro da ArrayList
+     * Apresenta as informaï¿½ï¿½es de todos os veï¿½culos dentro da ArrayList
      * 
      * @return
      */
+    @Override
     public String getInfo() {
         for (Veiculo veiculo : listaDeVeiculos){
             if(veiculo != null){
@@ -65,10 +70,11 @@ public class Veiculos implements IVeiculos {
     }
 
     /**
-     * Apresenta as informações resumidas de todos os veículos
+     * Apresenta as informaï¿½ï¿½es resumidas de todos os veï¿½culos
      * 
      * @return
      */
+    @Override
     public String getResumoInfo() {
         for (Veiculo veiculo : listaDeVeiculos){
             if(veiculo != null){
@@ -79,11 +85,12 @@ public class Veiculos implements IVeiculos {
     }
 
     /**
-     * Remove um veiculo da lista através da sua placa
+     * Remove um veiculo da lista atravï¿½s da sua placa
      * 
      * @param placa
      * @return
      */
+    @Override
     public boolean remove(String placa) {
         for (Veiculo veiculo : listaDeVeiculos) {
             if (veiculo.getPlaca().equals(placa)) {
@@ -95,11 +102,12 @@ public class Veiculos implements IVeiculos {
     }
 
     /**
-     * Verifica a existência de um veículo usando a placa como parâmetro
+     * Verifica a existï¿½ncia de um veï¿½culo usando a placa como parï¿½metro
      * 
      * @param placa
      * @return
      */
+    @Override
     public boolean existe(String placa) {
         for (Veiculo veiculo : listaDeVeiculos) {
             if(veiculo.getPlaca().equals(placa)) {

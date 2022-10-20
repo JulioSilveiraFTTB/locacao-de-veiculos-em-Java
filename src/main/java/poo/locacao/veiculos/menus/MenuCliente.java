@@ -4,18 +4,20 @@ import poo.locacao.veiculos.objetos.arraylists.*;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.Cor;
+import poo.locacao.veiculos.objetos.Cliente;
 
 import java.util.Scanner;
 
 public class MenuCliente {
     Clientes c = new Clientes();
+    Cliente cliente = new Cliente(null, null, 0, 0, 0);
 
     public static void areaCliente() {
        int op;
        boolean repeat;
        boolean defaultRepeat;
        // menu com as op��es dos m�todos
-       Cor.printf(Color.GREEN, "[CLIENTES - LOCADORA DE VEICULOS]\n\n");
+       Cor.printf(Color.GREEN, "\n[CLIENTES - LOCADORA DE VEICULOS]\n\n");
        Cor.printf("    1 - Cadastrar novo cliente\n");
        Cor.printf("    2 - Consultar cliente (por CPF)\n");
        Cor.printf("    3 - Consultar cliente (por CPF/resumido)\n");
@@ -33,19 +35,19 @@ public class MenuCliente {
 
             switch (op) {
                 case 1:
-                    cadastroCliente(null);
+                    cadastroCliente(null, null);
                     break;
                 case 2:
-                    consultaClientePorCpf(null);
+                    consultaClientePorCpf(null, null);
                     break;    
                 case 3:
-                    consultaClientesResumidoPorCpf(null);
+                    consultaClientesResumidoPorCpf(null, null);
                     break;
                 case 4:
-                    consultaClientes(null);
+                    consultaClientes(null, null);
                     break;
                 case 5:
-                    removeCliente(null);
+                    removeCliente(null, null);
                     break;
                 case 6:
                     Cor.printf("\n");
@@ -65,27 +67,58 @@ public class MenuCliente {
        }
     }
 
-    public static void cadastroCliente(Clientes c) {
-        c.add(null);
+    public static void cadastroCliente(Clientes c, Cliente cliente) {
+        String nome;
+        String endereco;
+        long cpf;
+        long cnh;
+        long telefone;
+
+        Scanner in = new Scanner(System.in);
+
+        Cor.printf(Color.GREEN, "\n[CLIENTES - CADASTRAR NOVO CLIENTE]\n \n");
+        Cor.printf("Para realizar um novo cadastro, primeiro informe o nome do cliente: \n");
+        nome = in.nextLine();
+        cliente.setNome(nome);
+
+        Cor.printf("Agora, informe o endereco do cliente: \n");
+        endereco = in.nextLine();
+        cliente.setEndereco(endereco);
+
+        Cor.printf("Informe o CPF do cliente: \n");
+        cpf = in.nextLong();
+        cliente.setCpf(cpf);
+
+        Cor.printf("Informe a CNH do cliente: \n");
+        cnh = in.nextLong();
+        cliente.setCnh(cnh);
+
+        Cor.printf("Por fim, informe o telefone: \n");
+        telefone = in.nextLong();
+        cliente.setTelefone(telefone);
+
+        cliente = new Cliente(nome, endereco, cpf, cnh, telefone);
+        c.add(cliente);
+        Cor.printf(Cor.GREEN, "O cliente foi cadastrado com sucesso!");
     }
 
-    public static void consultaClientePorCpf(Clientes c) {
+    public static void consultaClientePorCpf(Clientes c, Cliente cliente) {
         c.getInfo(0);   
     }
 
-    public static void consultaClientesResumidoPorCpf(Clientes c) {
+    public static void consultaClientesResumidoPorCpf(Clientes c, Cliente cliente) {
         c.getResumoInfo();  
     }
 
-    public static void consultaClientes(Clientes c) {
+    public static void consultaClientes(Clientes c, Cliente cliente) {
         c.getInfo();  
     }
 
-    // public static void editarCliente(Clientes c) {
+    // public static void editarCliente(Clientes c, Clientes c, Cliente cliente) {
         
     // }
 
-    public static void removeCliente(Clientes c) {
+    public static void removeCliente(Clientes c, Cliente cliente) {
         c.remove(0);
     }
 }

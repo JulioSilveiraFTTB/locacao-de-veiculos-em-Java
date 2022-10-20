@@ -13,8 +13,9 @@ public class Locacoes implements ILocacoes {
     private List<Locacao> listaDeLocacoes = new ArrayList<>();
 
     /**
-     * Adiciona a locação a lista de locações
+     * Adiciona a locaï¿½ï¿½o a lista de locaï¿½ï¿½es
      */
+    @Override
     public void add(Locacao locacao) {
         if (locacao != null) {
             listaDeLocacoes.add(locacao);
@@ -23,11 +24,12 @@ public class Locacoes implements ILocacoes {
 
     // duvida
     /**
-     * Retorna uma locação usando o código como parâmetro
+     * Retorna uma locaï¿½ï¿½o usando o cï¿½digo como parï¿½metro
      * 
      * @param codigo
      * @return
      */
+    @Override
     public Locacao get(int codigo) {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
@@ -38,10 +40,11 @@ public class Locacoes implements ILocacoes {
     }
     
     /**
-     * Apresenta as informações de uma locação através do seu código
+     * Apresenta as informaï¿½ï¿½es de uma locaï¿½ï¿½o atravï¿½s do seu cï¿½digo
      * 
      * @return
      */
+    @Override
     public String getInfo(int codigo) {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
@@ -52,10 +55,11 @@ public class Locacoes implements ILocacoes {
     }
 
     /**
-     * Apresenta as informações de todos as locações dentro da ArrayList
+     * Apresenta as informaï¿½ï¿½es de todos as locaï¿½ï¿½es dentro da ArrayList
      * 
      * @return
      */
+    @Override
     public String getInfo() {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao != null) {
@@ -68,11 +72,12 @@ public class Locacoes implements ILocacoes {
     // getResumoInfo()
 
     /**
-     * Remove uma locação ao utilizar o seu ID (código) como parâmetro 
+     * Remove uma locaï¿½ï¿½o ao utilizar o seu ID (cï¿½digo) como parï¿½metro 
      * 
      * @param codigo
      * @return
      */
+    @Override
     public boolean remove(int codigo) {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
@@ -84,11 +89,12 @@ public class Locacoes implements ILocacoes {
     }
 
     /**
-     * Verifica a existência de uma locação usando o seu ID (código) como parâmetro
+     * Verifica a existï¿½ncia de uma locaï¿½ï¿½o usando o seu ID (cï¿½digo) como parï¿½metro
      * 
      * @param codigo
      * @return
      */
+    @Override
     public boolean existe(int codigo) {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
@@ -99,7 +105,7 @@ public class Locacoes implements ILocacoes {
     }
 
     /**
-     * Retorna todas as locações incluídas dentro da ArrayList
+     * Retorna todas as locaï¿½ï¿½es incluï¿½das dentro da ArrayList
      * 
      * @return
      */
