@@ -81,7 +81,7 @@ public class MenuVeiculo {
             Cor.printf("\t Informe o tipo de veiculo que deseja cadastrar:");
             Cor.printf("\t 1 - Cadastrar carro\n");
             Cor.printf("\t 2 - Cadastrar onibus\n");
-            Cor.printf("\t 3 - Cadastrar casminhao");
+            Cor.printf("\t 3 - Cadastrar caminhao");
             Cor.printf("\t 0 - Sair\n");
             Cor.printf(Color.BLUE, "\n Digite uma das opcoes acima: ");
             op = in.nextInt();
@@ -94,6 +94,7 @@ public class MenuVeiculo {
             	double consumo;
             	ArCondicionado arCond;
             	Cor.printf("\tInforme os dados do carro\n");
+          
             	Cor.printf("Placa:");
             	placa = in.nextLine();
             	
@@ -142,6 +143,7 @@ public class MenuVeiculo {
             	InternetSemFio intFio;
             	
             	Cor.printf("\tInforme os dados do Ônibus\n");
+                    
             	Cor.printf("Placa:");
             	placa = in.nextLine();
             	
@@ -197,6 +199,7 @@ public class MenuVeiculo {
                 double qConsumo;
                 
                 Cor.printf("\tInforme os dados do Caminhão\n");
+
             	Cor.printf("Placa:");
             	placa = in.nextLine();
             	
@@ -231,7 +234,8 @@ public class MenuVeiculo {
         
         
     }
-
+    
+    
     public static void consultaVeiculoPorPlaca() {
         
     }
