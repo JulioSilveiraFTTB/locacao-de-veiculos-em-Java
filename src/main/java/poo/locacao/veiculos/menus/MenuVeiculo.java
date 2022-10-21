@@ -69,6 +69,8 @@ public class MenuVeiculo {
     public static void cadastroVeiculo() {
     	int op;
     	int op2;
+        int op3;
+        int op4;
         String placa;
         int ano;
         double diaria;
@@ -132,10 +134,95 @@ public class MenuVeiculo {
             	
             	break;
             case 2:
+            	int qPessoas
+            	int qPortas;
+            	int categoria;
+            	double nConsumo;
+            	ArCondicionado arCond;
+            	InternetSemFio intFio;
             	
+            	Cor.printf("\tInforme os dados do Ônibus\n");
+            	Cor.printf("Placa:");
+            	placa = in.nextLine();
+            	
+            	Cor.printf("Ano: ");
+            	ano = in.nextInt();
+            	in.nextLine();
+            	
+            	Cor.printf("Valor da diaria: ");
+            	diaria = in.nextDouble();
+            	in.nextLine();
+            	
+                Cor.printf("Consumo: ");
+            	nConsumo = in.nextDouble();
+            	in.nextLine();    
+                    
+            	Cor.printf("Quantidade de passageiros: ");
+            	qPessoas = in.nextInt();
+            	in.nextLine();
+            	
+            	Cor.printf("Qual categoria: ");
+            	categoria = in.nextInt();
+            	in.nextLine();
+            	
+            	Cor.printf("Possui acesso a internet?\n1 - SIM\n2 - NÃO\n");
+            	
+            	Cor.printf("Informe sua opção: ");
+            	op3 = in.nextInt();
+            	in.nextLine();
+            	
+            	if(op3 == 1)
+            		intFio = InternetSemFio.SIM;
+            	else
+            		intFio = InternetSemFio.NAO;
+            	
+            	Cor.printf("Possui ar condicionado?\n1 - SIM\n2 - NÃO\n");
+            	
+            	Cor.printf("Informe sua opção: ");
+            	op4 = in.nextInt();
+            	in.nextLine();
+            	
+            	if(op4 == 1)
+            		arCond = ArCondicionado.SIM;
+            	else
+            		arCond = ArCondicionado.NAO;
+            		
+            	v = new onibus(placa, ano, diaria, qPessoa, qPortas,nConsumo, intFio, arCond);
+            	
+            	lV.add(v);
             	break;
             case 3:
+            	int nEixos;
+                float nCargaMax;
+                double qConsumo;
+                
+                Cor.printf("\tInforme os dados do Caminhão\n");
+            	Cor.printf("Placa:");
+            	placa = in.nextLine();
             	
+            	Cor.printf("Ano: ");
+            	ano = in.nextInt();
+            	in.nextLine();
+            	
+            	Cor.printf("Valor da diaria: ");
+            	diaria = in.nextDouble();
+            	in.nextLine();
+                    
+                Cor.printf("Consumo: ");
+            	qConsumo = in.nextDouble();
+            	in.nextLine();    
+            	
+            	Cor.printf("Número de eixos: ");
+            	nEixos = in.nextLIne();
+            	in.nextLIne();
+            	
+            	Cor.printf("Qual a carga máxima: ");
+            	nCargaMax = in.nextFloat();
+            	in.nextLine();
+            	
+            	v = new caminhao(placa, ano, diaria, qConsumo, nEixos, nCargaMax);
+            	
+            	lV.add(v);
             	break;
             }
             
