@@ -2,9 +2,13 @@ package poo.locacao.veiculos.menus;
 
 import poo.locacao.veiculos.objetos.arraylists.*;
 import poo.locacao.veiculos.objetos.Cor;
+import poo.locacao.veiculos.objetos.tipoveiculo.Caminhao;
 import poo.locacao.veiculos.objetos.tipoveiculo.Carro;
+import poo.locacao.veiculos.objetos.tipoveiculo.Onibus;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.ArCondicionado;
+import poo.locacao.veiculos.objetos.tipoveiculo.enums.Categoria;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
+import poo.locacao.veiculos.objetos.tipoveiculo.enums.Wifi;
 import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.Veiculo;
 
@@ -92,7 +96,7 @@ public class MenuVeiculo {
             	int nPassageiros;
             	int nPortas;
             	double consumo;
-            	ArCondicionado arCond;
+            	ArCondicionado arCond = ArCondicionado.NAO;
             	Cor.printf("\tInforme os dados do carro\n");
           
             	Cor.printf("Placa:");
@@ -118,16 +122,20 @@ public class MenuVeiculo {
             	consumo = in.nextDouble();
             	in.nextLine();
             	
-            	Cor.printf("Possui ar condicionado?\n1 - SIM\n2 - NÃO\n");
-            	
-            	Cor.printf("Informe sua opção: ");
-            	op2 = in.nextInt();
-            	in.nextLine();
-            	
-            	if(op2 == 1)
-            		arCond = ArCondicionado.SIM;
-            	else
-            		arCond = ArCondicionado.NAO;
+            	do {
+            		Cor.printf("Possui ar condicionado?\n1 - SIM\n2 - NÃO\n");
+                	
+                	Cor.printf("Informe sua opção: ");
+                	op2 = in.nextInt();
+                	in.nextLine();
+                	
+                	if(op2 == 1)
+                		arCond = ArCondicionado.SIM;
+                	else if(op2 == 2)
+                		arCond = ArCondicionado.NAO;
+                	else
+                		System.out.println("Opção invalida!");
+            	}while(op2 != 1 && op2 != 2);
             	
             	v = new Carro(placa, ano, diaria, nPassageiros, nPortas,consumo, arCond);
             	
@@ -135,12 +143,11 @@ public class MenuVeiculo {
             	
             	break;
             case 2:
-            	int qPessoas
+            	int qPessoas;
             	int qPortas;
-            	int categoria;
-            	double nConsumo;
-            	ArCondicionado arCond;
-            	InternetSemFio intFio;
+            	Categoria categoria = Categoria.CONVECIONAL;
+            	ArCondicionado arCond1 = ArCondicionado.NAO;
+            	Wifi intFio = Wifi.NAO;
             	
             	Cor.printf("\tInforme os dados do Ônibus\n");
                     
@@ -154,18 +161,23 @@ public class MenuVeiculo {
             	Cor.printf("Valor da diaria: ");
             	diaria = in.nextDouble();
             	in.nextLine();
-            	
-                Cor.printf("Consumo: ");
-            	nConsumo = in.nextDouble();
-            	in.nextLine();    
-                    
+                            
             	Cor.printf("Quantidade de passageiros: ");
             	qPessoas = in.nextInt();
             	in.nextLine();
             	
-            	Cor.printf("Qual categoria: ");
-            	categoria = in.nextInt();
+            	Cor.printf("Qual categoria?\n1 - Leito\n2 - Executivo\n3 - Convencional\n ");
+            	Cor.printf("Informe sua opção: ");
+            	
+            	op3 = in.nextInt();
             	in.nextLine();
+            	
+            	if(op3 == 1)
+            		categoria = Categoria.LEITO;
+            	else if(op3 == 2)
+            		categoria = Categoria.EXECUTIVO;
+            	else if(op3 == 3)
+            		categoria = Categoria.CONVECIONAL;
             	
             	Cor.printf("Possui acesso a internet?\n1 - SIM\n2 - NÃO\n");
             	
@@ -174,9 +186,11 @@ public class MenuVeiculo {
             	in.nextLine();
             	
             	if(op3 == 1)
-            		intFio = InternetSemFio.SIM;
+            		intFio = Wifi.SIM;
+            	else if(op3 == 2)
+            		intFio = Wifi.NAO;
             	else
-            		intFio = InternetSemFio.NAO;
+            		System.out.println("Opção invalida!");
             	
             	Cor.printf("Possui ar condicionado?\n1 - SIM\n2 - NÃO\n");
             	
@@ -185,18 +199,19 @@ public class MenuVeiculo {
             	in.nextLine();
             	
             	if(op4 == 1)
-            		arCond = ArCondicionado.SIM;
+            		arCond1 = ArCondicionado.SIM;
+            	else if(op4 == 2)
+            		arCond1 = ArCondicionado.NAO;
             	else
-            		arCond = ArCondicionado.NAO;
+            		System.out.println("Opção invalida!");
             		
-            	v = new onibus(placa, ano, diaria, qPessoa, qPortas,nConsumo, intFio, arCond);
+            	v = new Onibus(placa, ano, diaria, qPessoas, categoria, arCond1,intFio );
             	
             	lV.add(v);
             	break;
             case 3:
             	int nEixos;
-                float nCargaMax;
-                double qConsumo;
+                double nCargaMax;
                 
                 Cor.printf("\tInforme os dados do Caminhão\n");
 
@@ -209,21 +224,17 @@ public class MenuVeiculo {
             	
             	Cor.printf("Valor da diaria: ");
             	diaria = in.nextDouble();
-            	in.nextLine();
-                    
-                Cor.printf("Consumo: ");
-            	qConsumo = in.nextDouble();
             	in.nextLine();    
             	
             	Cor.printf("Número de eixos: ");
-            	nEixos = in.nextLIne();
-            	in.nextLIne();
-            	
-            	Cor.printf("Qual a carga máxima: ");
-            	nCargaMax = in.nextFloat();
+            	nEixos = in.nextInt();
             	in.nextLine();
             	
-            	v = new caminhao(placa, ano, diaria, qConsumo, nEixos, nCargaMax);
+            	Cor.printf("Qual a carga máxima: ");
+            	nCargaMax = in.nextDouble();
+            	in.nextLine();
+            	
+            	v = new Caminhao(placa, ano, diaria, nEixos, nCargaMax);
             	
             	lV.add(v);
             	break;
