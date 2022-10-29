@@ -9,8 +9,6 @@ import poo.locacao.veiculos.objetos.Cliente;
 import java.util.Scanner;
 
 public class MenuCliente {
-    Clientes c = new Clientes();
-    Cliente cliente = new Cliente(null, null, 0, 0, 0);
 
     public static void areaCliente() {
        int op;
@@ -35,7 +33,7 @@ public class MenuCliente {
 
             switch (op) {
                 case 1:
-                    cadastroCliente(null, null);
+                    cadastroCliente();
                     break;
                 case 2:
                     consultaClientePorCpf(null, null);
@@ -67,7 +65,10 @@ public class MenuCliente {
        }
     }
 
-    public static void cadastroCliente(Clientes c, Cliente cliente) {
+    public void cadastroCliente() {
+        Cliente cliente = new Cliente(null, null, 0, 0, 0);
+        Clientes c = new Clientes();
+
         String nome;
         String endereco;
         long cpf;
