@@ -2,6 +2,7 @@ package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Cliente;
 import poo.locacao.veiculos.objetos.interfaces.IClientes;
+import poo.locacao.veiculos.objetos.Cor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ public class Clientes implements IClientes {
     /**
      * Instancia uma nova ArrayList de objetos Locacao
      */
-    private List<Cliente> clientes = new ArrayList<>();
+    private List<Cliente> c = new ArrayList<>();
 
     /**
      * Adiciona um cliente a lista de clientes
@@ -18,7 +19,8 @@ public class Clientes implements IClientes {
     @Override
     public void add(Cliente cliente) {
         if (cliente != null) {
-            clientes.add(cliente);
+            c.add(cliente);
+            Cor.printf(Cor.GREEN, "O cliente foi cadastrado com sucesso!");
         }
     }
 
@@ -30,7 +32,7 @@ public class Clientes implements IClientes {
      */
     @Override
     public Cliente get(long cpf){
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return cliente;
             } 
@@ -46,7 +48,7 @@ public class Clientes implements IClientes {
      */
     @Override
     public String getInfo(long cpf) {
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return cliente.toString();
             }
@@ -61,7 +63,7 @@ public class Clientes implements IClientes {
      */
     @Override
     public String getInfo() {
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : c) {
             if (cliente != null) {
                 return cliente.toString();
             }
@@ -76,7 +78,7 @@ public class Clientes implements IClientes {
      */
     @Override
     public String getResumoInfo() {
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : c) {
             if (cliente != null) {
                 // criar nova String no Objeto Cliente para diferenciar Info normal de resumida
                 return cliente.toString();
@@ -93,9 +95,9 @@ public class Clientes implements IClientes {
      */
     @Override
     public boolean remove(long cpf) {
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
-                clientes.remove(cliente);
+                c.remove(cliente);
                 return true;
             }
         }
@@ -110,13 +112,14 @@ public class Clientes implements IClientes {
      */
     @Override
     public boolean existe(long cpf) {
-        for (Cliente cliente : clientes) {
+        for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return true;
             }
         }
         return false;
     }
+    
 
     /**
      * Retorna todos os clientes inclu�dos dentro da ArrayList
@@ -124,6 +127,6 @@ public class Clientes implements IClientes {
      * @return
      */
     public List<Cliente> getClientes() {
-        return clientes;
+        return c;
     }
 }
