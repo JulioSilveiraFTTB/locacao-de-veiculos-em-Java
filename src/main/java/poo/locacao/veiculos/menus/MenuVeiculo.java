@@ -45,7 +45,7 @@ public class MenuVeiculo {
                     consultaVeiculoPorPlaca();
                     break;    
                 case 3:
-                    consultaVeiculosResumidoPorPlaca();
+                    consultaVeiculosResumido();
                     break;
                 case 4:
                     consultaVeiculos();
@@ -248,15 +248,28 @@ public class MenuVeiculo {
     
     
     public static void consultaVeiculoPorPlaca() {
+    	String placa;
+    	Cor.printf("Informe a placa do veiculo:");
+    	placa = in.nextLine();
+    	if(lV.existe(placa)) {
+    		Cor.printf("Estas são as informações do veiculo:\n");
+    	
+    	Cor.printf(lV.getInfo(placa));
+    	}else
+    		Cor.printf("Este veiculo não está registrado!");
+    	
         
     }
 
-    public static void consultaVeiculosResumidoPorPlaca() {
+    public static void consultaVeiculosResumido() {
+    	Cor.printf("Estas são as informações resumidas dos veiculos:\n");
+    	Cor.printf(lV.getResumoInfo());
         
     }
 
     public static void consultaVeiculos() {
-        
+    	Cor.printf("Estas são as informações dos veiculos:\n");
+    	Cor.printf(lV.getInfo());
     }
 
     public static void editarVeiculo() {
@@ -264,6 +277,14 @@ public class MenuVeiculo {
     }
 
     public static void removeVeiculo() {
-        
+    	String placa;
+    	Cor.printf("Informe a placa do veiculo:");
+    	placa = in.nextLine();
+    	if(lV.existe(placa)) {
+    		Cor.printf(lV.remove(placa));
+    		Cor.printf("Veiculo removido!\n");
+    	
+    	}else
+    		Cor.printf("Este veiculo não está registrado!");
     }
 }

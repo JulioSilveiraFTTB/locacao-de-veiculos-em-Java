@@ -30,11 +30,12 @@ public class Veiculos implements IVeiculos {
      */
     @Override
     public Veiculo get(String placa) {
-        for (Veiculo veiculo : listaDeVeiculos){
-            if(veiculo.getPlaca().equals(placa)){
-                return veiculo;
-            }
-        }
+    	if(existe(placa))
+    		for (Veiculo veiculo : listaDeVeiculos){
+    			if(veiculo.getPlaca().equals(placa)){
+    				return veiculo;
+    			}
+    		}
         return null;
     }
 
@@ -46,11 +47,12 @@ public class Veiculos implements IVeiculos {
      */
     @Override
     public String getInfo(String placa) {
-        for (Veiculo veiculo : listaDeVeiculos){
-            if(veiculo.getPlaca().equals(placa)){
-                return veiculo.toString();
-            }
-        }
+    	if(existe(placa))
+	        for (Veiculo veiculo : listaDeVeiculos){
+	            if(veiculo.getPlaca().equals(placa)){
+	                return veiculo.toString();
+	            }
+	        }
         return null;
     }
 
@@ -61,11 +63,11 @@ public class Veiculos implements IVeiculos {
      */
     @Override
     public String getInfo() {
-        for (Veiculo veiculo : listaDeVeiculos){
-            if(veiculo != null){
-                return listaDeVeiculos.toString();
-            }
-        }
+	        for (Veiculo veiculo : listaDeVeiculos){
+	            if(veiculo != null){
+	                return listaDeVeiculos.toString();
+	            }
+	        }
         return null;
     }
 
@@ -76,11 +78,11 @@ public class Veiculos implements IVeiculos {
      */
     @Override
     public String getResumoInfo() {
-        for (Veiculo veiculo : listaDeVeiculos){
-            if(veiculo != null){
-                return listaDeVeiculos.toString();
-            }
-        }
+	        for (Veiculo veiculo : listaDeVeiculos){
+	            if(veiculo != null){
+	                return listaDeVeiculos.toString();
+	            }
+	        }
         return null;
     }
 
@@ -92,12 +94,13 @@ public class Veiculos implements IVeiculos {
      */
     @Override
     public boolean remove(String placa) {
-        for (Veiculo veiculo : listaDeVeiculos) {
-            if (veiculo.getPlaca().equals(placa)) {
-                listaDeVeiculos.remove(veiculo);
-                return true;
-            }
-        }
+    	if(existe(placa))
+	        for (Veiculo veiculo : listaDeVeiculos) {
+	            if (veiculo.getPlaca().equals(placa)) {
+	                listaDeVeiculos.remove(veiculo);
+	                return true;
+	            }
+	        }
         return false;
     }
 
