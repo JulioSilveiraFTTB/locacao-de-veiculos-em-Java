@@ -82,12 +82,12 @@ public class MenuVeiculo {
         do {
         	//menu com as opcoes de tipo de veiculo
             Cor.printf(Color.GREEN, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
-            Cor.printf("\t Informe o tipo de veiculo que deseja cadastrar:");
+            Cor.printf("\t Informe o tipo de veiculo que deseja cadastrar:\n");
             Cor.printf("\t 1 - Cadastrar carro\n");
             Cor.printf("\t 2 - Cadastrar onibus\n");
             Cor.printf("\t 3 - Cadastrar caminhao");
             Cor.printf("\t 0 - Sair\n");
-            Cor.printf(Color.BLUE, "\n Digite uma das opcoes acima: ");
+            Cor.printf(Color.BLUE, "\n Digite uma das opcoes acima:\n ");
             op = in.nextInt();
             in.nextLine();
             
@@ -240,10 +240,7 @@ public class MenuVeiculo {
             	break;
             }
             
-    	}while(op != 0);
-        
-        
-        
+    	} while(op != 0);
     }
     
     
@@ -256,22 +253,22 @@ public class MenuVeiculo {
     	
     	Cor.printf(lV.getInfo(placa));
     	}else
-    		Cor.printf("Este veiculo não está registrado!");
-    	
-        
+    		Cor.printf("Este veiculo não está registrado!");       
     }
+
 
     public static void consultaVeiculosResumido() {
     	Cor.printf("Estas são as informações resumidas dos veiculos:\n");
     	Cor.printf(lV.getResumoInfo());
-        
     }
+
 
     public static void consultaVeiculos() {
     	Cor.printf("Estas são as informações dos veiculos:\n");
     	Cor.printf(lV.getInfo());
     }
 
+	
     public static void editarVeiculo() {
         
     }

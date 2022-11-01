@@ -81,7 +81,7 @@ public class Clientes implements IClientes {
         for (Cliente cliente : c) {
             if (cliente != null) {
                 // criar nova String no Objeto Cliente para diferenciar Info normal de resumida
-                return cliente.toString();
+                return cliente.toStringResumido();
             }
         }
         return null;

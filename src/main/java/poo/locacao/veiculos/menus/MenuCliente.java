@@ -12,26 +12,28 @@ public class MenuCliente {
     private static Clientes c = new Clientes();
     private static Cliente cliente;
 
+    private static Scanner in = new Scanner(System.in);
+
     public static void areaCliente() {
        int op;
-       boolean repeat;
        boolean defaultRepeat;
+       boolean repeat;
        // menu com as op��es dos m�todos
        Cor.printf(Color.GREEN, "\n[CLIENTES - LOCADORA DE VEICULOS]\n\n");
        Cor.printf("    1 - Cadastrar novo cliente\n");
        Cor.printf("    2 - Consultar cliente (por CPF)\n");
-       Cor.printf("    3 - Consultar cliente (por CPF/resumido)\n");
+       Cor.printf("    3 - Consultar clientes (resumidos)\n");
        Cor.printf("    4 - Consultar lista completa de clientes\n");
        Cor.printf("    5 - Remover cliente\n");
        Cor.printf("    6 - Retornar ao menu principal\n");
        Cor.printf("    0 - Sair\n");
        Cor.printf(Color.BLUE, "\nDigite uma das opcoes acima: ");
    
-       try (Scanner in = new Scanner(System.in)) {
+       op = in.nextInt();
+       in.nextLine();
+
         do {
             defaultRepeat = repeat = false;
-            op = in.nextInt();
-            in.nextLine();
 
             switch (op) {
                 case 1:
@@ -40,15 +42,19 @@ public class MenuCliente {
                     break;
                 case 2:
                     consultaClientePorCpf();
+                    areaCliente();
                     break;    
                 case 3:
                     consultaClientesResumidoPorCpf();
+                    areaCliente();
                     break;
                 case 4:
                     consultaClientes();
+                    areaCliente();
                     break;
                 case 5:
                     removeCliente();
+                    areaCliente();
                     break;
                 case 6:
                     Cor.printf("\n");
@@ -64,8 +70,7 @@ public class MenuCliente {
                     Menu.menuInicial();
                     break;
                 }
-        } while (repeat || defaultRepeat);
-       }
+        } while (op != 0);
     }
 
     public static void cadastroCliente() {
@@ -75,77 +80,71 @@ public class MenuCliente {
         long cnh;
         long telefone;
 
-        Scanner in = new Scanner(System.in);
-
         Cor.printf(Color.GREEN, "\n[CLIENTES - CADASTRAR NOVO CLIENTE]\n \n");
         Cor.printf("Para realizar um novo cadastro, primeiro informe o nome do cliente: \n");
         nome = in.nextLine();
         // cliente.setNome(nome);
 
-        Cor.printf("Agora, informe o endereco do cliente: \n");
+        Cor.printf("Agora, informe o endereco do cliente:");
         endereco = in.nextLine();
         // cliente.setEndereco(endereco);
 
-        Cor.printf("Informe o CPF do cliente: \n");
+        Cor.printf("Informe o CPF do cliente:");
         cpf = in.nextLong();
         // cliente.setCpf(cpf);
 
-        Cor.printf("Informe a CNH do cliente: \n");
+        Cor.printf("Informe a CNH do cliente:");
         cnh = in.nextLong();
         // cliente.setCnh(cnh);
 
-        Cor.printf("Por fim, informe o telefone: \n");
+        Cor.printf("Por fim, informe o telefone:");
         telefone = in.nextLong();
         // cliente.setTelefone(telefone);
 
         cliente = new Cliente(nome, endereco, cpf, cnh, telefone);
+        
         c.add(cliente);
     }
 
     public static void consultaClientePorCpf() {
-        long cpfInformado;
+        long cpf;
 
-        Scanner in = new Scanner(System.in);
+        Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTE (POR CPF)]\n");
+        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo:");
+        cpf = in.nextLong();
 
-        Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTE (POR CPF)]\n \n");
-        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo: \n");
-        cpfInformado = in.nextLong();
-
-        c.getInfo(cpfInformado);
+        if(c.existe(cpf)){
+            // Cor.printf("O cliente solicitado:\n ");
+            Cor.printf(c.getInfo(cpf));
+        } else
+            Cor.printf("\nO cliente não está cadastrado no sistema!\n");
     }
 
     public static void consultaClientesResumidoPorCpf() {
-        long cpf;
-
-        Scanner in = new Scanner(System.in);
-
-        Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTE RESUMIDO (POR CPF)]\n \n");
-        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo: \n");
-        cpf = in.nextLong();
-
-        c.getResumoInfo();  
+        Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTES (RESUMIDO)]\n \n");
+        Cor.printf("Informações resumidas de todos os clientes da locadora:\n ");
+        Cor.printf(c.getResumoInfo());
     }
 
     public static void consultaClientes() {
-        Cor.printf(Color.GREEN, "\n[CLIENTES - LISTAR CLIENTES]\n \n");
-        
-        c.getClientes();      
-        // c.getInfo();  
+        Cor.printf(Color.GREEN, "\n[CLIENTES - LISTAR CLIENTES]\n");
+        Cor.printf(c.getInfo());
     }
 
     // public static void editarCliente(Clientes c, Clientes c, Cliente cliente) {
-        
     // }
 
     public static void removeCliente() {
         long cpf;
 
-        Scanner in = new Scanner(System.in);
-
-        Cor.printf(Color.GREEN, "\n[CLIENTES - REMOVER CLIENTE]\n \n");
-        Cor.printf("Para remover um cliente do sistema, informe o CPF cadastrado: \n");
+        Cor.printf(Color.GREEN, "\n[CLIENTES - REMOVER CLIENTES]\n");
+        Cor.printf("Informe o CPF do cliente para remove-lo do sistema:");
         cpf = in.nextLong();
-
-        c.remove(cpf);
+    
+        if(c.existe(cpf)) {
+            c.remove(cpf);
+            Cor.printf("\nCliente removido!");
+        } else
+            Cor.printf("\nO CPF informado não está registrado no sistema!\n");
     }
 }

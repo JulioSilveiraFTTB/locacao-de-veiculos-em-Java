@@ -43,7 +43,7 @@ public class Cliente {
     }
 
     /**
-     * Retorna o endereço do cliente
+     * Retorna o endereï¿½o do cliente
      * 
      * @param endereco
      */
@@ -52,7 +52,7 @@ public class Cliente {
     }
 
     /**
-     * Atribui o endereço ao cliente
+     * Atribui o endereï¿½o ao cliente
      * 
      * @param endereco
      */
@@ -120,11 +120,16 @@ public class Cliente {
      * @return
      */
     public String toString(){
-        return "Informacoes do cliente:\n"
+     return "\nInformacoes do cliente:\n"
              + "Nome: " + nome + "\n"
              + "Endereco: " + endereco + "\n"
              + "CPF: " + cpf + "\n"
              + "CNH: " + cnh + "\n"
              + "Telefone: " + telefone + "\n" + "\n";
     }
+
+    public String toStringResumido(){
+	    return "Nome: " + this.nome + "\n" 
+        +      "CPF: " + this.cpf + "\n";
+	}
 }
