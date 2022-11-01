@@ -15,12 +15,12 @@ public class Menu {
         boolean repeat;
         boolean defaultRepeat;
 
-        Cor.printf(Color.PURPLE, "[MENU - LOCADORA DE VEICULOS]\n\n");
+        Cor.printf(Color.PURPLE, "\n[MENU - LOCADORA DE VEICULOS]\n\n");
         Cor.printf("    1 - Clientes\n");
         Cor.printf("    2 - Veiculos\n");
         Cor.printf("    3 - Locacoes\n");
         Cor.printf("    0 - Sair\n");
-        Cor.printf(Color.YELLOW, "\nDigite uma das opcoes acima: ");
+        Cor.printf(Color.PURPLE, "\nDigite uma das opcoes acima: ");
 
         try (Scanner in = new Scanner(System.in)) {
             do {
@@ -39,11 +39,11 @@ public class Menu {
                         MenuLocacao.areaLocacao();
                         break;
                     case 0:
-                        Cor.printf(Color.RED, "O programa foi encerrado... \n");
+                        Cor.printf(Color.RED, "\nO programa foi encerrado... \n");
                         System.exit(0);
                         break;
                     default:
-                        Cor.printf(Color.CYAN, "Digite uma opcao valida! \n");
+                        Cor.printf(Color.BLUE, "\nDigite uma opcao valida! \n");
                         defaultRepeat = true;
                         break;
                 }

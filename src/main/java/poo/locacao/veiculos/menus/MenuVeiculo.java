@@ -24,7 +24,7 @@ public class MenuVeiculo {
        
         do {
         	// menu com as op��es dos m�todos
-            Cor.printf(Color.GREEN, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
+            Cor.printf(Color.YELLOW, "\n[VEICULOS - LOCADORA DE VEICULOS]\n\n");
             Cor.printf("    1 - Cadastrar novo veiculo\n");
             Cor.printf("    2 - Consultar veiculo (por placa)\n");
             Cor.printf("    3 - Consultar veiculos (por placa/resumido)\n");
@@ -32,7 +32,7 @@ public class MenuVeiculo {
             Cor.printf("    5 - Remover veiculo\n");
             Cor.printf("    6 - Retornar ao menu principal\n");
             Cor.printf("    0 - Sair\n");
-            Cor.printf(Color.BLUE, "\nDigite uma das opcoes acima: ");
+            Cor.printf(Color.YELLOW, "\nDigite uma das opcoes acima: ");
         
             op = in.nextInt();
             in.nextLine();
@@ -81,13 +81,13 @@ public class MenuVeiculo {
     	
         do {
         	//menu com as opcoes de tipo de veiculo
-            Cor.printf(Color.GREEN, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
+            Cor.printf(Color.YELLOW, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
             Cor.printf("\t Informe o tipo de veiculo que deseja cadastrar:\n");
             Cor.printf("\t 1 - Cadastrar carro\n");
             Cor.printf("\t 2 - Cadastrar onibus\n");
             Cor.printf("\t 3 - Cadastrar caminhao");
             Cor.printf("\t 0 - Sair\n");
-            Cor.printf(Color.BLUE, "\n Digite uma das opcoes acima:\n ");
+            Cor.printf(Color.YELLOW, "\n Digite uma das opcoes acima:\n ");
             op = in.nextInt();
             in.nextLine();
             
@@ -249,11 +249,11 @@ public class MenuVeiculo {
     	Cor.printf("Informe a placa do veiculo:");
     	placa = in.nextLine();
     	if(lV.existe(placa)) {
-    		Cor.printf("Estas são as informações do veiculo:\n");
+    		Cor.printf("\nEstas são as informações do veiculo:\n");
     	
     	Cor.printf(lV.getInfo(placa));
     	}else
-    		Cor.printf("Este veiculo não está registrado!");       
+    		Cor.printf("\nEste veiculo não está registrado!\n");       
     }
 
 
@@ -279,9 +279,9 @@ public class MenuVeiculo {
     	placa = in.nextLine();
     	if(lV.existe(placa)) {
     		Cor.printf(lV.remove(placa));
-    		Cor.printf("Veiculo removido!\n");
+    		Cor.printf("\nVeiculo removido!\n");
     	
     	}else
-    		Cor.printf("Este veiculo não está registrado!");
+    		Cor.printf("\nEste veiculo não está registrado!\n");
     }
 }

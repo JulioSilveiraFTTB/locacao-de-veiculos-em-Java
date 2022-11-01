@@ -27,7 +27,7 @@ public class MenuCliente {
        Cor.printf("    5 - Remover cliente\n");
        Cor.printf("    6 - Retornar ao menu principal\n");
        Cor.printf("    0 - Sair\n");
-       Cor.printf(Color.BLUE, "\nDigite uma das opcoes acima: ");
+       Cor.printf(Color.GREEN, "\nDigite uma das opcoes acima: ");
    
        op = in.nextInt();
        in.nextLine();
