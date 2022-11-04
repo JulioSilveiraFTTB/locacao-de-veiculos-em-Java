@@ -131,8 +131,33 @@ public class MenuCliente {
         Cor.printf(c.getInfo());
     }
 
-    // public static void editarCliente(Clientes c, Clientes c, Cliente cliente) {
-    // }
+    public static void editarCliente() {
+        String nome;
+        String endereco;
+        long cpf;
+        long telefone;
+
+        Cor.printf(Color.GREEN, "\n[CLIENTES - EDITAR CLIENTE]\n");
+        Cor.printf("Para editar as infos de um cliente, informe o CPF do mesmo:");
+        cpf = in.nextLong();
+
+        if(c.existe(cpf)){
+                Cor.printf("Informe o novo nome para o cliente:\n ");
+                nome = in.nextLine();
+                cliente.setNome(nome);
+
+                Cor.printf("Informe o novo endereço para o cliente:\n ");
+                endereco = in.nextLine();
+                cliente.setEndereco(endereco);
+
+                Cor.printf("Informe o novo endereço para o cliente:\n ");
+                telefone = in.nextLong();
+                cliente.setTelefone(telefone);
+
+                c.set(cpf, cliente);
+        } else
+            Cor.printf("\nO cliente não está cadastrado no sistema!\n");
+    }
 
     public static void removeCliente() {
         long cpf;
