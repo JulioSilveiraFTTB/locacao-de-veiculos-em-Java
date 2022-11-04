@@ -119,13 +119,25 @@ public class Clientes implements IClientes {
         }
         return false;
     }
-    
+
+    @Override
+    public boolean set(long cpf, Cliente clienteModificado) {
+        for (Cliente cliente : c) {
+            if (cliente.getCpf() == cpf) {
+                c.remove(cliente);
+                c.add(clienteModificado);
+                return true;
+            }
+        }
+        return false;
+    }
 
     /**
      * Retorna todos os clientes inclu�dos dentro da ArrayList
      * 
      * @return
      */
+    
     public List<Cliente> getClientes() {
         return c;
     }
