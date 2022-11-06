@@ -19,7 +19,7 @@ public class MenuCliente {
        boolean defaultRepeat;
        boolean repeat;
        // menu com as op��es dos m�todos
-       Cor.printf(Color.GREEN, "\n[CLIENTES - LOCADORA DE VEICULOS]\n\n");
+       Cor.printf(Color.GREEN, "\n[CLIENTES - LOCADORA DE VEÍCULOS]\n\n");
        Cor.printf("    1 - Cadastrar novo cliente\n");
        Cor.printf("    2 - Consultar cliente (por CPF)\n");
        Cor.printf("    3 - Consultar clientes (resumidos)\n");
@@ -28,7 +28,7 @@ public class MenuCliente {
        Cor.printf("    6 - Remover cliente\n");
        Cor.printf("    7 - Retornar ao menu principal\n");
        Cor.printf("    0 - Sair\n");
-       Cor.printf(Color.GREEN, "\nDigite uma das opcoes acima: ");
+       Cor.printf(Color.GREEN, "\nDigite uma das opções acima: ");
    
        op = in.nextInt();
        in.nextLine();
@@ -70,7 +70,7 @@ public class MenuCliente {
                     System.exit(0);
                     break;
                 default:
-                    Cor.printf(Color.CYAN, "\nDigite uma opcao valida! \n \n");
+                    Cor.printf(Color.CYAN, "\nDigite uma opção válida! \n \n");
                     defaultRepeat = true;
                     Menu.menuInicial();
                     break;
@@ -90,7 +90,7 @@ public class MenuCliente {
         nome = in.nextLine();
         // cliente.setNome(nome);
 
-        Cor.printf("Agora, informe o endereco do cliente: ");
+        Cor.printf("Agora, informe o endereço do cliente: ");
         endereco = in.nextLine();
         // cliente.setEndereco(endereco);
 
@@ -141,8 +141,8 @@ public class MenuCliente {
         long cpf;
         long telefone;
 
-        Cor.printf(Color.GREEN, "\n[CLIENTES - EDITAR CLIENTE]\n");
-        Cor.printf("Para editar as infos de um cliente, informe o CPF do mesmo: \n");
+        Cor.printf(Color.GREEN, "\n[CLIENTES - EDITAR INFORMAÇÕES DO CLIENTE]\n");
+        Cor.printf("Para editar as informações de um cliente, informe o CPF do mesmo: \n");
         cpf = in.nextLong();
 
         for(Cliente cliente : c.getClientes()){
@@ -172,7 +172,7 @@ public class MenuCliente {
         long cpf;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - REMOVER CLIENTES]\n");
-        Cor.printf("Informe o CPF do cliente para remove-lo do sistema:");
+        Cor.printf("Informe o CPF do cliente para removê-lo do sistema:");
         cpf = in.nextLong();
     
         if(c.existe(cpf)) {
