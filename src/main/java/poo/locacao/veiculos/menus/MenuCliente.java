@@ -24,8 +24,9 @@ public class MenuCliente {
        Cor.printf("    2 - Consultar cliente (por CPF)\n");
        Cor.printf("    3 - Consultar clientes (resumidos)\n");
        Cor.printf("    4 - Consultar lista completa de clientes\n");
-       Cor.printf("    5 - Remover cliente\n");
-       Cor.printf("    6 - Retornar ao menu principal\n");
+       Cor.printf("    5 - Editar cliente\n");
+       Cor.printf("    6 - Remover cliente\n");
+       Cor.printf("    7 - Retornar ao menu principal\n");
        Cor.printf("    0 - Sair\n");
        Cor.printf(Color.GREEN, "\nDigite uma das opcoes acima: ");
    
@@ -53,10 +54,14 @@ public class MenuCliente {
                     areaCliente();
                     break;
                 case 5:
-                    removeCliente();
+                    editarCliente();
                     areaCliente();
                     break;
                 case 6:
+                    removeCliente();
+                    areaCliente();
+                    break;    
+                case 7:
                     Cor.printf("\n");
                     Menu.menuInicial();
                     break;
@@ -85,19 +90,19 @@ public class MenuCliente {
         nome = in.nextLine();
         // cliente.setNome(nome);
 
-        Cor.printf("Agora, informe o endereco do cliente:");
+        Cor.printf("Agora, informe o endereco do cliente: \n");
         endereco = in.nextLine();
         // cliente.setEndereco(endereco);
 
-        Cor.printf("Informe o CPF do cliente:");
+        Cor.printf("Informe o CPF do cliente: \n");
         cpf = in.nextLong();
         // cliente.setCpf(cpf);
 
-        Cor.printf("Informe a CNH do cliente:");
+        Cor.printf("Informe a CNH do cliente: \n");
         cnh = in.nextLong();
         // cliente.setCnh(cnh);
 
-        Cor.printf("Por fim, informe o telefone:");
+        Cor.printf("Por fim, informe o telefone: \n");
         telefone = in.nextLong();
         // cliente.setTelefone(telefone);
 
@@ -110,7 +115,7 @@ public class MenuCliente {
         long cpf;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTE (POR CPF)]\n");
-        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo:");
+        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo: \n");
         cpf = in.nextLong();
 
         if(c.existe(cpf)){
@@ -122,7 +127,7 @@ public class MenuCliente {
 
     public static void consultaClientesResumidoPorCpf() {
         Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTES (RESUMIDO)]\n \n");
-        Cor.printf("Informações resumidas de todos os clientes da locadora:\n ");
+        Cor.printf("Informações resumidas de todos os clientes da locadora: \n");
         Cor.printf(c.getResumoInfo());
     }
 
@@ -138,25 +143,30 @@ public class MenuCliente {
         long telefone;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - EDITAR CLIENTE]\n");
-        Cor.printf("Para editar as infos de um cliente, informe o CPF do mesmo:");
+        Cor.printf("Para editar as infos de um cliente, informe o CPF do mesmo: \n");
         cpf = in.nextLong();
 
-        if(c.existe(cpf)){
-                Cor.printf("Informe o novo nome para o cliente:\n ");
-                nome = in.nextLine();
-                cliente.setNome(nome);
+        for(Cliente cliente : c.getClientes()){
+            if(c.existe(cpf)){
+                Scanner entrada = new Scanner(System.in);
 
-                Cor.printf("Informe o novo endereço para o cliente:\n ");
-                endereco = in.nextLine();
+                // Cor.printf("Informe o nome do cliente: \n");
+                // nome = in.nextLine();
+
+                Cor.printf("Informe o novo endereço para o cliente: \n");
+                endereco = entrada.nextLine();
+    
+                Cor.printf("Informe o novo telefone do cliente: \n");
+                telefone = entrada.nextLong();
+    
+                // cliente.setNome(nome);
                 cliente.setEndereco(endereco);
-
-                Cor.printf("Informe o novo endereço para o cliente:\n ");
-                telefone = in.nextLong();
                 cliente.setTelefone(telefone);
-
+    
                 c.set(cpf, cliente);
-        } else
-            Cor.printf("\nO cliente não está cadastrado no sistema!\n");
+            } else
+                Cor.printf("\nO cliente não está cadastrado no sistema!\n");
+        }
     }
 
     public static void removeCliente() {

@@ -125,7 +125,7 @@ public class Cliente {
              + "Endereco: " + endereco + "\n"
              + "CPF: " + cpf + "\n"
              + "CNH: " + cnh + "\n"
-             + "Telefone: " + telefone + "\n" + "\n";
+             + "Telefone: " + telefone + "\n";
     }
 
     public String toStringResumido(){
