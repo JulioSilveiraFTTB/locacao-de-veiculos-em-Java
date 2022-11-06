@@ -33,9 +33,7 @@ public class MenuVeiculo {
             Cor.printf("    6 - Retornar ao menu principal\n");
             Cor.printf("    0 - Sair\n");
             Cor.printf(Color.YELLOW, "\nDigite uma das opcoes acima: ");
-        
             op = in.nextInt();
-            in.nextLine();
 
             switch (op) {
                 case 1:
@@ -81,13 +79,13 @@ public class MenuVeiculo {
     	
         do {
         	//menu com as opcoes de tipo de veiculo
-            Cor.printf(Color.YELLOW, "[VEICULOS - LOCADORA DE VEICULOS]\n\n");
-            Cor.printf("\t Informe o tipo de veiculo que deseja cadastrar:\n");
-            Cor.printf("\t 1 - Cadastrar carro\n");
-            Cor.printf("\t 2 - Cadastrar onibus\n");
-            Cor.printf("\t 3 - Cadastrar caminhao");
-            Cor.printf("\t 0 - Sair\n");
-            Cor.printf(Color.YELLOW, "\n Digite uma das opcoes acima:\n ");
+            Cor.printf(Color.YELLOW, "\n[VEICULOS - CADASTRO DE VEICULOS]\n\n");
+            Cor.printf("Informe o tipo de veiculo que deseja cadastrar:\n");
+            Cor.printf("1 - Cadastrar carro\n");
+            Cor.printf("2 - Cadastrar onibus\n");
+            Cor.printf("3 - Cadastrar caminhao\n");
+            Cor.printf("0 - Sair\n");
+            Cor.printf(Color.YELLOW, "\nDigite uma das opcoes acima:\n ");
             op = in.nextInt();
             in.nextLine();
             
@@ -97,48 +95,42 @@ public class MenuVeiculo {
             	int nPortas;
             	double consumo;
             	ArCondicionado arCond = ArCondicionado.NAO;
-            	Cor.printf("\tInforme os dados do carro\n");
+				Cor.printf(Color.YELLOW, "\n[VEICULOS - CADASTRO DE CARRO]\n\n");
+            	// Cor.printf("\tInforme os dados do carro: \n");
           
-            	Cor.printf("Placa:");
+            	Cor.printf("Placa: ");
             	placa = in.nextLine();
             	
             	Cor.printf("Ano: ");
             	ano = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Valor da diaria: ");
             	diaria = in.nextDouble();
-            	in.nextLine();
             	
             	Cor.printf("Numero de passageiros: ");
             	nPassageiros = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Numero de portas: ");
             	nPortas = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Consumo: ");
             	consumo = in.nextDouble();
-            	in.nextLine();
             	
             	do {
             		Cor.printf("Possui ar condicionado?\n1 - SIM\n2 - NÃO\n");
                 	
-                	Cor.printf("Informe sua opção: ");
+                	Cor.printf("Informe sua opção: \n");
                 	op2 = in.nextInt();
-                	in.nextLine();
                 	
                 	if(op2 == 1)
                 		arCond = ArCondicionado.SIM;
                 	else if(op2 == 2)
                 		arCond = ArCondicionado.NAO;
                 	else
-                		System.out.println("Opção invalida!");
-            	}while(op2 != 1 && op2 != 2);
+                		System.out.println("\nOpção invalida!\n");
+            	} while(op2 != 1 && op2 != 2);
             	
             	v = new Carro(placa, ano, diaria, nPassageiros, nPortas,consumo, arCond);
-            	
             	lV.add(v);
             	
             	break;
@@ -149,28 +141,23 @@ public class MenuVeiculo {
             	ArCondicionado arCond1 = ArCondicionado.NAO;
             	Wifi intFio = Wifi.NAO;
             	
-            	Cor.printf("\tInforme os dados do Ônibus\n");
+				Cor.printf(Color.YELLOW, "\n[VEICULOS - CADASTRO DE ONIBUS]\n\n");
                     
-            	Cor.printf("Placa:");
+            	Cor.printf("Placa: ");
             	placa = in.nextLine();
             	
             	Cor.printf("Ano: ");
             	ano = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Valor da diaria: ");
             	diaria = in.nextDouble();
-            	in.nextLine();
                             
             	Cor.printf("Quantidade de passageiros: ");
             	qPessoas = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Qual categoria?\n1 - Leito\n2 - Executivo\n3 - Convencional\n ");
             	Cor.printf("Informe sua opção: ");
-            	
             	op3 = in.nextInt();
-            	in.nextLine();
             	
             	if(op3 == 1)
             		categoria = Categoria.LEITO;
@@ -183,105 +170,101 @@ public class MenuVeiculo {
             	
             	Cor.printf("Informe sua opção: ");
             	op3 = in.nextInt();
-            	in.nextLine();
             	
             	if(op3 == 1)
             		intFio = Wifi.SIM;
             	else if(op3 == 2)
             		intFio = Wifi.NAO;
             	else
-            		System.out.println("Opção invalida!");
+            		System.out.println("\nOpção invalida!\n");
             	
             	Cor.printf("Possui ar condicionado?\n1 - SIM\n2 - NÃO\n");
             	
             	Cor.printf("Informe sua opção: ");
             	op4 = in.nextInt();
-            	in.nextLine();
             	
             	if(op4 == 1)
             		arCond1 = ArCondicionado.SIM;
             	else if(op4 == 2)
             		arCond1 = ArCondicionado.NAO;
             	else
-            		System.out.println("Opção invalida!");
+            		System.out.println("\nOpção invalida!\n");
             		
             	v = new Onibus(placa, ano, diaria, qPessoas, categoria, arCond1,intFio );
             	
             	lV.add(v);
             	break;
+
             case 3:
             	int nEixos;
                 double nCargaMax;
                 
-                Cor.printf("\tInforme os dados do Caminhão\n");
+                Cor.printf(Color.YELLOW, "\n[VEICULOS - CADASTRO DE CAMINHAO]\n\n");
 
-            	Cor.printf("Placa:");
+            	Cor.printf("Placa: ");
             	placa = in.nextLine();
             	
             	Cor.printf("Ano: ");
             	ano = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Valor da diaria: ");
             	diaria = in.nextDouble();
-            	in.nextLine();    
             	
             	Cor.printf("Número de eixos: ");
             	nEixos = in.nextInt();
-            	in.nextLine();
             	
             	Cor.printf("Qual a carga máxima: ");
             	nCargaMax = in.nextDouble();
-            	in.nextLine();
             	
             	v = new Caminhao(placa, ano, diaria, nEixos, nCargaMax);
-            	
             	lV.add(v);
+
             	break;
             }
-            
     	} while(op != 0);
     }
     
-    
     public static void consultaVeiculoPorPlaca() {
     	String placa;
-    	Cor.printf("Informe a placa do veiculo:");
+
+		Cor.printf(Color.YELLOW, "\n[VEICULOS - CONSULTAR VEICULO (POR PLACA)]\n\n");
+    	Cor.printf("Informe a placa do veiculo: ");
     	placa = in.nextLine();
+
     	if(lV.existe(placa)) {
-    		Cor.printf("\nEstas são as informações do veiculo:\n");
-    	
-    	Cor.printf(lV.getInfo(placa));
+			Cor.printf("\nInformações do veiculo:\n");
+    		Cor.printf(lV.getInfo(placa));
     	}else
     		Cor.printf("\nEste veiculo não está registrado!\n");       
     }
 
-
     public static void consultaVeiculosResumido() {
-    	Cor.printf("Estas são as informações resumidas dos veiculos:\n");
+		Cor.printf(Color.YELLOW, "\n[VEICULOS - CONSULTAR VEICULOS (RESUMIDOS)]\n\n");
+    	Cor.printf("\nInformações resumidas dos veiculos:\n");
     	Cor.printf(lV.getResumoInfo());
     }
 
-
     public static void consultaVeiculos() {
-    	Cor.printf("Estas são as informações dos veiculos:\n");
+		Cor.printf(Color.YELLOW, "\n[VEICULOS - LISTAR VEICULOS]\n\n");
+    	Cor.printf("\nInformações dos veiculos:\n");
     	Cor.printf(lV.getInfo());
     }
 
-	
     public static void editarVeiculo() {
         
     }
 
     public static void removeVeiculo() {
     	String placa;
-    	Cor.printf("Informe a placa do veiculo:");
+
+		Cor.printf(Color.YELLOW, "\n[VEICULOS - REMOVER VEICULO]\n\n");
+    	Cor.printf("Informe a placa do veiculo: ");
     	placa = in.nextLine();
+
     	if(lV.existe(placa)) {
     		Cor.printf(lV.remove(placa));
     		Cor.printf("\nVeiculo removido!\n");
-    	
-    	}else
+    	} else
     		Cor.printf("\nEste veiculo não está registrado!\n");
     }
 }

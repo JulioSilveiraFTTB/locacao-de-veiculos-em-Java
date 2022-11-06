@@ -19,7 +19,7 @@ public abstract class Veiculo {
     }
 
     /**
-     * Construtor do objeto Veiculo usando apenas a placa como parâmetro
+     * Construtor do objeto Veiculo usando apenas a placa como parï¿½metro
      * 
      * @param placa
      */
@@ -28,7 +28,7 @@ public abstract class Veiculo {
     }
 
     /**
-     * Retorna a placa do veículo
+     * Retorna a placa do veï¿½culo
      * 
      * @param placa
      */
@@ -37,7 +37,7 @@ public abstract class Veiculo {
     }
 
     /**
-     * Atribui a placa do veículo
+     * Atribui a placa do veï¿½culo
      * 
      * @param placa
      */
@@ -46,7 +46,7 @@ public abstract class Veiculo {
     }
 
     /**
-     * Retorna o ano do veículo
+     * Retorna o ano do veï¿½culo
      * 
      * @param ano
      */
@@ -55,7 +55,7 @@ public abstract class Veiculo {
     }
 
      /**
-     * Atribui o ano de criação do veículo
+     * Atribui o ano de criaï¿½ï¿½o do veï¿½culo
      * 
      * @param ano
      */
@@ -64,7 +64,7 @@ public abstract class Veiculo {
     }
 
     /**
-     * Retorna a diária do veículo
+     * Retorna a diï¿½ria do veï¿½culo
      * 
      * @param ano
      */
@@ -73,7 +73,7 @@ public abstract class Veiculo {
     }
 
     /**
-     * Atribui o valor da diária para alugar o veículo
+     * Atribui o valor da diï¿½ria para alugar o veï¿½culo
      * 
      * @param diaria
      */
@@ -82,15 +82,19 @@ public abstract class Veiculo {
     }
 
     /**
-     * Retorna a String completa do veículo
+     * Retorna a String completa do veï¿½culo
      * 
      * @return
      */
     @Override
     public String toString(){
-        return "Informacoes do veiculo:\n"
-             + "Placa: " + placa + "\n"
+        return "Placa: " + placa + "\n"
              + "Ano: " + ano + "\n"
              + "Diaria: " + getDiaria() + "\n";
+    }
+
+    public String toStringResumido(){
+        return "Placa: " + placa + "\n"
+             + "Ano: " + ano + "\n";
     }
 }

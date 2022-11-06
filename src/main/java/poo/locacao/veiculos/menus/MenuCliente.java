@@ -86,28 +86,27 @@ public class MenuCliente {
         long telefone;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - CADASTRAR NOVO CLIENTE]\n \n");
-        Cor.printf("Para realizar um novo cadastro, primeiro informe o nome do cliente: \n");
+        Cor.printf("Para realizar um novo cadastro, primeiro informe o nome do cliente: ");
         nome = in.nextLine();
         // cliente.setNome(nome);
 
-        Cor.printf("Agora, informe o endereco do cliente: \n");
+        Cor.printf("Agora, informe o endereco do cliente: ");
         endereco = in.nextLine();
         // cliente.setEndereco(endereco);
 
-        Cor.printf("Informe o CPF do cliente: \n");
+        Cor.printf("Informe o CPF do cliente: ");
         cpf = in.nextLong();
         // cliente.setCpf(cpf);
 
-        Cor.printf("Informe a CNH do cliente: \n");
+        Cor.printf("Informe a CNH do cliente: ");
         cnh = in.nextLong();
         // cliente.setCnh(cnh);
 
-        Cor.printf("Por fim, informe o telefone: \n");
+        Cor.printf("Por fim, informe o telefone: ");
         telefone = in.nextLong();
         // cliente.setTelefone(telefone);
 
         cliente = new Cliente(nome, endereco, cpf, cnh, telefone);
-        
         c.add(cliente);
     }
 
@@ -115,7 +114,7 @@ public class MenuCliente {
         long cpf;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTE (POR CPF)]\n");
-        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo: \n");
+        Cor.printf("Para consultar um cliente cadastrado no sistema, informe o CPF do mesmo: ");
         cpf = in.nextLong();
 
         if(c.existe(cpf)){
