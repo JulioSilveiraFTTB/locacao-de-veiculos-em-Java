@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class MenuCliente {
     private static Clientes c = new Clientes();
-    private static Cliente cliente;
+    Cliente cliente;
 
     private static Scanner in = new Scanner(System.in);
 

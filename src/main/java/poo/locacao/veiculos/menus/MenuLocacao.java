@@ -12,6 +12,8 @@ import poo.locacao.veiculos.objetos.Locacao;
 import poo.locacao.veiculos.objetos.Cliente;
 import poo.locacao.veiculos.objetos.Veiculo;
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class MenuLocacao {
     private static Locacoes lO = new Locacoes();
@@ -24,6 +26,7 @@ public class MenuLocacao {
     private static Veiculo v;
 
     private static Scanner in = new Scanner(System.in);
+
     
     public static void areaLocacao() {
        int op;
@@ -86,15 +89,15 @@ public class MenuLocacao {
 
         Scanner entrada = new Scanner(System.in);
         // Seguro seg = Seguro.NAO;
+       List listaDeClientes = new ArrayList();
+       listaDeClientes.addAll(c.getClientes());
 
         Cor.printf("Informe os dados da locação: \n");
-        Cor.printf("CPF:");
+        Cor.printf("CPF: ");
         cpf = in.nextLong();
-        c.get(cpf);
 
-        Cor.printf("Placa:");
+        Cor.printf("Placa: ");
         placa = entrada.nextLine();
-        lV.get(placa);
 
         Cor.printf("Valor da diária: ");
         diaria = in.nextDouble();
@@ -138,7 +141,6 @@ public class MenuLocacao {
     public static void consultaLocacao(){
         Cor.printf("Estas são as informações das locações:\n");
         Cor.printf(lO.getInfo());
-
     }
 
     public static void editarLocacao() {
