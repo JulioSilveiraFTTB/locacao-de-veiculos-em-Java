@@ -29,8 +29,9 @@ public class MenuVeiculo {
             Cor.printf("    2 - Consultar veículo (por placa)\n");
             Cor.printf("    3 - Consultar veículos (por placa/resumido)\n");
             Cor.printf("    4 - Consultar lista completa de veículos\n");
-            Cor.printf("    5 - Remover veículo\n");
-            Cor.printf("    6 - Retornar ao menu principal\n");
+			Cor.printf("    5 - Editar veículo\n");
+            Cor.printf("    6 - Remover veículo\n");
+            Cor.printf("    7 - Retornar ao menu principal\n");
             Cor.printf("    0 - Sair\n");
             Cor.printf(Color.YELLOW, "\nDigite uma das opções acima: ");
             op = in.nextInt();
@@ -49,9 +50,12 @@ public class MenuVeiculo {
                     consultaVeiculos();
                     break;
                 case 5:
-                    removeVeiculo();
+                    editarVeiculo();
                     break;
-                case 6:
+				case 6:
+					removeVeiculo();
+					break;
+                case 7:
                     Cor.printf("\n");
                     Menu.menuInicial();
                     break;
@@ -85,9 +89,8 @@ public class MenuVeiculo {
             Cor.printf("2 - Cadastrar onibus\n");
             Cor.printf("3 - Cadastrar caminhao\n");
             Cor.printf("0 - Sair\n");
-            Cor.printf(Color.YELLOW, "\nDigite uma das opções acima:\n ");
+            Cor.printf(Color.YELLOW, "\nDigite uma das opções acima: \n");
             op = in.nextInt();
-            in.nextLine();
             
             switch(op) {
             case 1:
@@ -119,7 +122,7 @@ public class MenuVeiculo {
             	do {
             		Cor.printf("O veículo possui ar-condicionado?\n1 - SIM\n2 - NÃO\n");
                 	
-                	Cor.printf("Informe a opção: \n");
+                	Cor.printf("Informe a opção: ");
                 	op2 = in.nextInt();
                 	
                 	if(op2 == 1)
@@ -248,7 +251,30 @@ public class MenuVeiculo {
     }
 
     public static void editarVeiculo() {
-        
+        String placa;
+		Double diaria;
+
+		Scanner entrada = new Scanner(System.in);
+
+		Cor.printf(Color.YELLOW, "\n[VEÍCULOS - EDITAR VEÍCULO]\n");
+    	Cor.printf("Informe a placa do veículo: ");
+    	placa = entrada.nextLine();
+
+		for (Veiculo veiculo : lV.getVeiculos()){
+			if(lV.existe(placa)){
+				Cor.printf("Informe a placa do veículo (digite uma placa nova caso tenha mudado ou escreva a placa novamente): ");
+                placa = entrada.nextLine();
+
+				Cor.printf("Informe a diária do veículo: ");
+				diaria = entrada.nextDouble();
+
+				veiculo.setPlaca(placa);
+				veiculo.setDiaria(diaria);
+
+				lV.set(placa, veiculo);
+			} else
+				Cor.printf("\nO veículo não está cadastrado no sistema!\n");
+		}
     }
 
     public static void removeVeiculo() {

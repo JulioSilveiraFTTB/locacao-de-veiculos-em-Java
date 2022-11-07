@@ -120,6 +120,12 @@ public class Clientes implements IClientes {
         return false;
     }
 
+    /**
+     * Remove um cliente usando seu CPF como parâmetro de pesquisa e insere um novo cliente, com novas informações
+     * 
+     * @param cpf
+     * @return
+     */
     @Override
     public boolean set(long cpf, Cliente clienteModificado) {
         for (Cliente cliente : c) {
@@ -136,8 +142,7 @@ public class Clientes implements IClientes {
      * Retorna todos os clientes inclu�dos dentro da ArrayList
      * 
      * @return
-     */
-    
+     */   
     public List<Cliente> getClientes() {
         return c;
     }

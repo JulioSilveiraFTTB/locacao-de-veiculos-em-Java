@@ -120,6 +120,25 @@ public class Veiculos implements IVeiculos {
         return false;
     }
 
+        /**
+     * Remove um cliente usando seu CPF como parâmetro de pesquisa e insere um novo cliente, com novas informações
+     * 
+     * @param cpf
+     * @return
+     */
+    @Override
+    public boolean set(String placa, Veiculo veiculoModificado) {
+        for (Veiculo veiculo : listaDeVeiculos) {
+            if (veiculo.getPlaca().equals(placa)) {
+                listaDeVeiculos.remove(veiculo);
+                listaDeVeiculos.add(veiculoModificado);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     public List<Veiculo> getVeiculos() {
         return listaDeVeiculos;
     }

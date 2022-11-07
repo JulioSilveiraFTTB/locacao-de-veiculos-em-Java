@@ -2,60 +2,62 @@ package poo.locacao.veiculos.objetos.interfaces;
 
 import poo.locacao.veiculos.objetos.Veiculo;
 /**
- * Interface que permite a manipulação de um conjunto de veículos.
+ * Interface que permite a manipulaï¿½ï¿½o de um conjunto de veï¿½culos.
  * @author Aline
  */
 public interface IVeiculos {
 
     /**
-     * Adiciona um veiculo na relação de veiculos.
+     * Adiciona um veiculo na relaï¿½ï¿½o de veiculos.
      * @param v Veiculo a ser inserido.
      */
     public void add(Veiculo v);
     
     /**
-     * Captura o veiculo com a placa informada por parâmetro.
+     * Captura o veiculo com a placa informada por parï¿½metro.
      * @param placa Placa do veiculo a ser capturado.
-     * @return Veiculo com a placa informada ou null em caso da placa não ser encontrada.
+     * @return Veiculo com a placa informada ou null em caso da placa nï¿½o ser encontrada.
      */
     public Veiculo get(String placa);
     
     /**
-     * Captura uma String com as informaçoes do veiculo com a placa informada por parâmetro.
+     * Captura uma String com as informaï¿½oes do veiculo com a placa informada por parï¿½metro.
      * @param placa Placa do veiculo a ser capturado.
-     * @return String com as informaçoes do veiculo com a placa informada por parâmetro 
-     * ou null em caso da placa não ser encontrada.
+     * @return String com as informaï¿½oes do veiculo com a placa informada por parï¿½metro 
+     * ou null em caso da placa nï¿½o ser encontrada.
      */
     public String getInfo(String placa);
     
     /**
-     * Captura uma String com as informaçoes de todos os veiculos.
-     * @return String com as informaçoes de todos os veiculos 
-     * ou null caso não exista nenhum veiculo.
+     * Captura uma String com as informaï¿½oes de todos os veiculos.
+     * @return String com as informaï¿½oes de todos os veiculos 
+     * ou null caso nï¿½o exista nenhum veiculo.
      */
     public String getInfo();
     
     /**
      * Captura uma String com a placa, o ano e o valor da diaria de todos os veiculos.
      * @return String com a placa, o ano e o valor da diaria de todos os veiculos 
-     * ou null caso não exista nenhum veiculo.
+     * ou null caso nï¿½o exista nenhum veiculo.
      * @throws Exception
      */
     public String getResumoInfo();
        
     /**
-     * Remove o veiculo com placa igual a informada por parâmetro.
+     * Remove o veiculo com placa igual a informada por parï¿½metro.
      * @param placa Placa do veiculo a ser capturado.
-     * @return True se o veiculo com a placa informada por parâmetro for removido ou
-     * false caso não exista nenhum veiculo com a placa informada. 
+     * @return True se o veiculo com a placa informada por parï¿½metro for removido ou
+     * false caso nï¿½o exista nenhum veiculo com a placa informada. 
      */
     public boolean remove(String placa);
     
     /**
-     * Verifica se existe um veiculo com a placa informada por parâmetro.
+     * Verifica se existe um veiculo com a placa informada por parï¿½metro.
      * @param placa Placa do veiculo a ser verificada.
      * @return True se um veiculo com a placa informada for encontrado ou 
-     * false caso não exista nenhum veiculo com a placa informada.
+     * false caso nï¿½o exista nenhum veiculo com a placa informada.
      */
     public boolean existe(String placa);
+
+    public boolean set(String placa, Veiculo veiculo);
 }
