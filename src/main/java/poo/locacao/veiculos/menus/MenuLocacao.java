@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class MenuLocacao {
     private static Locacoes lO = new Locacoes();
-    private static Locacao o;
+    private static Locacao locacao;
     private static Scanner in = new Scanner(System.in);
     
     public static void areaLocacao() {
@@ -73,9 +73,12 @@ public class MenuLocacao {
         String placa;
         Long cpf;
         int op;
+        LocalDate dataFinal;
+        LocalDate dataInicial = LocalDate.now();
+
         Seguro seg = Seguro.NAO;
 
-        Cor.printf("\tInforme os dados da Locação\n");
+        Cor.printf("\tInforme os dados da locação: \n");
 
         Cor.printf("CPF:");
         cpf = in.nextLong();
@@ -96,7 +99,8 @@ public class MenuLocacao {
                 System.out.println("\nOpção invalida!\n");
         }while(op != 1 && op != 2);
 
-        // Cor.printf("Informe a data Inicial da locação:");
+        locacao = new Locacao(null, null, null, dataInicial, dataFinal);
+        lO.add(locacao);
     }
 
     public static void cadastroLocacaoCodigo() {
