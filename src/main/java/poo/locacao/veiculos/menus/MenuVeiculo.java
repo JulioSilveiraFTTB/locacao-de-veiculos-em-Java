@@ -294,4 +294,8 @@ public class MenuVeiculo {
     	} else
     		Cor.printf("\nEste veículo não está registrado!\n");
     }
+
+	public static Veiculos getLV(){
+		return lV;
+	}
 }

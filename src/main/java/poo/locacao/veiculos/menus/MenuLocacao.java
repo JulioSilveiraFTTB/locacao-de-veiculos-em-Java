@@ -19,14 +19,13 @@ public class MenuLocacao {
     private static Locacoes lO = new Locacoes();
     private static Locacao locacao;
     
-    private static Clientes c;
-    private static Cliente cliente;
+    public static Clientes c = MenuCliente.getC();
+    public static Cliente cliente;
 
-    private static Veiculos lV;
+    private static Veiculos lV = MenuVeiculo.getLV();
     private static Veiculo v;
 
     private static Scanner in = new Scanner(System.in);
-
     
     public static void areaLocacao() {
        int op;
@@ -34,11 +33,11 @@ public class MenuLocacao {
         do{    
             // menu com as op��es dos m�todos
             Cor.printf(Color.CYAN, "\n[LOCACAO - LOCADORA DE VEICULOS]\n\n");
-            Cor.printf("    1 - Cadastrar nova locação:\n");
-            Cor.printf("    2 - Consultar locação (por código):\n");
-            Cor.printf("    3 - Consultar lista completa de locações:\n");
-            Cor.printf("    4 - Edita locação:\n");
-            Cor.printf("    5 - Remover locação:\n");
+            Cor.printf("    1 - Cadastrar nova locação\n");
+            Cor.printf("    2 - Consultar locação (por código)\n");
+            Cor.printf("    3 - Consultar lista completa de locações\n");
+            Cor.printf("    4 - Edita locação\n");
+            Cor.printf("    5 - Remover locação\n");
             Cor.printf("    6 - Retornar ao menu principal\n");
             Cor.printf("    0 - Sair\n");
             Cor.printf(Color.CYAN, "\nDigite uma das opcoes acima: ");
@@ -89,8 +88,8 @@ public class MenuLocacao {
 
         Scanner entrada = new Scanner(System.in);
         // Seguro seg = Seguro.NAO;
-       List listaDeClientes = new ArrayList();
-       listaDeClientes.addAll(c.getClientes());
+        List listaDeClientes = new ArrayList();
+        listaDeClientes.addAll(c.getClientes());
 
         Cor.printf("Informe os dados da locação: \n");
         Cor.printf("CPF: ");
@@ -119,11 +118,10 @@ public class MenuLocacao {
         //     else
         //         System.out.println("\nOpção invalida!\n");
         // }while(op != 1 && op != 2);
-
-        locacao = new Locacao(cliente, v, diaria, dataInicial, dataFinal);
+        locacao = new Locacao(c.get(cpf), lV.get(placa), diaria, dataInicial, dataFinal);
         lO.add(locacao);
 
-        System.out.println(locacao.toString());
+        System.out.println("\n" + locacao.toString());
     }
 
     public static void cadastroLocacaoCodigo() {
@@ -155,6 +153,6 @@ public class MenuLocacao {
             Cor.printf("\nLocação Removida!\n");
 
         }else
-            Cor.printf("\nEsta locaçõa não está registrada!\n");
+            Cor.printf("\nEsta locação não está registrada!\n");
     }
 }

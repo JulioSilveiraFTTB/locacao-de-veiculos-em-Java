@@ -6,11 +6,12 @@ import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.Cor;
 import poo.locacao.veiculos.objetos.Cliente;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class MenuCliente {
-    private static Clientes c = new Clientes();
-    Cliente cliente;
+    public static Clientes c = new Clientes();
+    public static Cliente cliente;
 
     private static Scanner in = new Scanner(System.in);
 
@@ -181,4 +182,9 @@ public class MenuCliente {
         } else
             Cor.printf("\nO CPF informado não está registrado no sistema!\n");
     }
+
+    public static Clientes getC(){
+        return c;
+    }
+
 }
