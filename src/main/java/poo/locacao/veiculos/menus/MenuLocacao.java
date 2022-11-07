@@ -9,11 +9,20 @@ import poo.locacao.veiculos.objetos.tipoveiculo.enums.Seguro;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import poo.locacao.veiculos.objetos.Locacao;
+import poo.locacao.veiculos.objetos.Cliente;
+import poo.locacao.veiculos.objetos.Veiculo;
 import java.util.Scanner;
 
 public class MenuLocacao {
     private static Locacoes lO = new Locacoes();
     private static Locacao locacao;
+    
+    private static Clientes c;
+    private static Cliente cliente;
+
+    private static Veiculos lV;
+    private static Veiculo v;
+
     private static Scanner in = new Scanner(System.in);
     
     public static void areaLocacao() {
@@ -22,11 +31,11 @@ public class MenuLocacao {
         do{    
             // menu com as op��es dos m�todos
             Cor.printf(Color.CYAN, "\n[LOCACAO - LOCADORA DE VEICULOS]\n\n");
-            Cor.printf("    1 - Cadastrar nova locacao\n");
-            Cor.printf("    2 - Consultar locacao (por código)\n");
-            Cor.printf("    3 - Consultar lista completa de locacao\n");
+            Cor.printf("    1 - Cadastrar nova locação:\n");
+            Cor.printf("    2 - Consultar locação (por código):\n");
+            Cor.printf("    3 - Consultar lista completa de locações:\n");
             Cor.printf("    4 - Edita locação:\n");
-            Cor.printf("    5 - Remover locacao\n");
+            Cor.printf("    5 - Remover locação:\n");
             Cor.printf("    6 - Retornar ao menu principal\n");
             Cor.printf("    0 - Sair\n");
             Cor.printf(Color.CYAN, "\nDigite uma das opcoes acima: ");
@@ -55,7 +64,7 @@ public class MenuLocacao {
                     Menu.menuInicial();
                     break;
                 case 0:
-                    Cor.printf(Color.RED, "O programa foi encerrado... \n");
+                    Cor.printf(Color.RED, "\nO programa foi encerrado... \n");
                     System.exit(0);
                     break;
                 default:
@@ -67,48 +76,59 @@ public class MenuLocacao {
 
     }
     
-
-
     public static void cadastroLocacao(){
         String placa;
         Long cpf;
-        int op;
-        LocalDate dataFinal;
+        Double diaria;
         LocalDate dataInicial = LocalDate.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dataFinal1;
 
-        Seguro seg = Seguro.NAO;
+        Scanner entrada = new Scanner(System.in);
+        // Seguro seg = Seguro.NAO;
 
-        Cor.printf("\tInforme os dados da locação: \n");
-
+        Cor.printf("Informe os dados da locação: \n");
         Cor.printf("CPF:");
         cpf = in.nextLong();
+        c.get(cpf);
 
         Cor.printf("Placa:");
-        placa = in.nextLine();
+        placa = entrada.nextLine();
+        lV.get(placa);
 
-        do {
-            Cor.printf("Possui seguro?\n1 - SIM\n2 - NÃO\n");
-            Cor.printf("Informe sua opção: ");
-            op = in.nextInt();
+        Cor.printf("Valor da diária: ");
+        diaria = in.nextDouble();
+
+        Cor.printf("Informe a data de entrega do veículo: ");
+        dataFinal1 = entrada.nextLine();
+        
+        LocalDate dataFinal = LocalDate.parse(dataFinal1, dtf);
+        // do {
+            // int op;
+        //     Cor.printf("Possui seguro?\n1 - SIM\n2 - NÃO\n");
+        //     Cor.printf("Informe sua opção: ");
+        //     op = in.nextInt();
             
-            if(op == 1)
-                seg = Seguro.SIM;
-            else if(op == 2)
-                seg = Seguro.NAO;
-            else
-                System.out.println("\nOpção invalida!\n");
-        }while(op != 1 && op != 2);
+        //     if(op == 1)
+        //         seg = Seguro.SIM;
+        //     else if(op == 2)
+        //         seg = Seguro.NAO;
+        //     else
+        //         System.out.println("\nOpção invalida!\n");
+        // }while(op != 1 && op != 2);
 
-        locacao = new Locacao(null, null, null, dataInicial, dataFinal);
+        locacao = new Locacao(cliente, v, diaria, dataInicial, dataFinal);
         lO.add(locacao);
+
+        System.out.println(locacao.toString());
     }
 
     public static void cadastroLocacaoCodigo() {
         int codigo;
-        Cor.printf("Informe o codigo da locação:");
+        Cor.printf("Informe o codigo da locação: ");
         codigo = in.nextInt();
         if(lO.existe(codigo)) {
-            Cor.printf("\nEstas são as informações da locação:\n");
+            Cor.printf("\nEstas são as informações da locação: \n");
 
         Cor.printf(lO.getInfo(codigo));
         }else
@@ -122,9 +142,7 @@ public class MenuLocacao {
     }
 
     public static void editarLocacao() {
-        
     }
-
     
     public static void removeLocacao() {
         int codigo;

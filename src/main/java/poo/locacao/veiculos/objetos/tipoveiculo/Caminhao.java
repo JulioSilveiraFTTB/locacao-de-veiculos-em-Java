@@ -26,7 +26,7 @@ public class Caminhao extends Veiculo {
     // }
 
     /**
-     * Retorna a quantidade de eixos do caminhão
+     * Retorna a quantidade de eixos do caminhï¿½o
      * 
      * @param eixos
      */
@@ -35,7 +35,7 @@ public class Caminhao extends Veiculo {
     }
 
     /**
-     * Retorna a carga máxima do caminhão
+     * Retorna a carga mï¿½xima do caminhï¿½o
      * 
      * @param carga
      */
@@ -44,7 +44,7 @@ public class Caminhao extends Veiculo {
     }
 
     /**
-     * Atribui a carga máxima que o caminhão pode carregar
+     * Atribui a carga mï¿½xima que o caminhï¿½o pode carregar
      * 
      * @param carga
      */
@@ -53,14 +53,14 @@ public class Caminhao extends Veiculo {
     }
 
      /**
-     * Retorna a String completa da locação
+     * Retorna a String completa da locaï¿½ï¿½o
      * 
      * @return
      */
     @Override
     public String toString(){
         return super.toString() +
-               "Número de eixos: " + eixos + "\n"
-             + "Carga máxima: " + carga + " toneladas";
+               "Nï¿½mero de eixos: " + eixos + "\n"
+             + "Carga mï¿½xima: " + carga + " toneladas" + "\n";
     }
 }

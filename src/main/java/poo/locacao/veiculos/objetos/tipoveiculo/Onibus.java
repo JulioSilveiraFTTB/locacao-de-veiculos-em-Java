@@ -31,7 +31,7 @@ public class Onibus extends Veiculo {
     // }
 
     /**
-     * Retorna a quantidade de passageiros do ônibus
+     * Retorna a quantidade de passageiros do ï¿½nibus
      * 
      * @param nPassageiros
      */
@@ -40,7 +40,7 @@ public class Onibus extends Veiculo {
     }
 
     /**
-     * Retorna a categoria do ônibus
+     * Retorna a categoria do ï¿½nibus
      * 
      * @param nPassageiros
      */
@@ -49,7 +49,7 @@ public class Onibus extends Veiculo {
     }
 
     /**
-     * Retorna se o ônibus tem ar-condicionado ou não
+     * Retorna se o ï¿½nibus tem ar-condicionado ou nï¿½o
      * 
      * @param arCondicionado
      */
@@ -58,7 +58,7 @@ public class Onibus extends Veiculo {
     }
 
     /**
-     * Retorna se o ônibus tem Wifi ou não
+     * Retorna se o ï¿½nibus tem Wifi ou nï¿½o
      * 
      * @param wifi
      */
@@ -67,14 +67,14 @@ public class Onibus extends Veiculo {
     }
 
     /**
-     * Retorna a String completa da locação
+     * Retorna a String completa da locaï¿½ï¿½o
      * 
      * @return
      */
     @Override
     public String toString() {
         return super.toString()
-              + "Número de passageiros: " + nPassageiros + "\n"
+              + "Nï¿½mero de passageiros: " + nPassageiros + "\n"
               + "Categoria: " + categoria + "\n"
               + "Wi-Fi: " + getWifi() + "\n"
               + "Ar-Condicionado: " + getArCondicionado() + "\n";

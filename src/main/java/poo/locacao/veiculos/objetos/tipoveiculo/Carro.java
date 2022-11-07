@@ -59,7 +59,7 @@ public class Carro extends Veiculo {
     }
 
     /**
-     * Retorna se o carro tem ar-condicionado ou não
+     * Retorna se o carro tem ar-condicionado ou nï¿½o
      * 
      * @param arCondicionado
      */
@@ -68,7 +68,7 @@ public class Carro extends Veiculo {
     }
 
      /**
-     * Retorna a String completa da locação
+     * Retorna a String completa da locaï¿½ï¿½o
      * 
      * @return
      */
@@ -78,6 +78,6 @@ public class Carro extends Veiculo {
                "Numero de passageiros: " + nPassageiros + "\n"
              + "Numero de portas: " + portas + "\n"
              + "Consumo: " + consumo + "km/L" + "\n"
-             + "Ar-condicionado: "  + getArCondicionado() + "\n" + "\n";
+             + "Ar-condicionado: "  + getArCondicionado() + "\n";
     }
 }

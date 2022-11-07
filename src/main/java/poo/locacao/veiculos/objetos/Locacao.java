@@ -34,7 +34,7 @@ public class Locacao {
     }
 
     /**
-     * Retorna o código identificador da locação
+     * Retorna o cï¿½digo identificador da locaï¿½ï¿½o
      * 
      * @param codigo
      */
@@ -43,7 +43,7 @@ public class Locacao {
     }
 
     /**
-     * Retorna o cliente que realizou a locação
+     * Retorna o cliente que realizou a locaï¿½ï¿½o
      * 
      * @param cliente
      */
@@ -52,7 +52,7 @@ public class Locacao {
     }
 
     /**
-     * Atribui o cliente que irá realizar a locação
+     * Atribui o cliente que irï¿½ realizar a locaï¿½ï¿½o
      * 
      * @param cliente
      */
@@ -61,7 +61,7 @@ public class Locacao {
     }
 
      /**
-     * Retorna o veículo alugado
+     * Retorna o veï¿½culo alugado
      * 
      * @param veiculo
      */
@@ -70,7 +70,7 @@ public class Locacao {
     }
 
     /**
-     * Atribui o veiculo que será alugado
+     * Atribui o veiculo que serï¿½ alugado
      * 
      * @param veiculo
      */
@@ -79,7 +79,7 @@ public class Locacao {
     }
 
     /**
-     * Retorna a diária da locação
+     * Retorna a diï¿½ria da locaï¿½ï¿½o
      * 
      * @param diaria
      */
@@ -88,7 +88,7 @@ public class Locacao {
     }
 
     /**
-     * Atribui o valor da diária da locação
+     * Atribui o valor da diï¿½ria da locaï¿½ï¿½o
      * 
      * @param diaria
      */
@@ -97,7 +97,7 @@ public class Locacao {
     }
 
      /**
-     * Retorna a data final da locação
+     * Retorna a data final da locaï¿½ï¿½o
      * 
      * @param dataFinal
      */
@@ -106,7 +106,7 @@ public class Locacao {
     }
 
     /**
-     * Atribui a data final da locação
+     * Atribui a data final da locaï¿½ï¿½o
      * 
      * @param dataFinal
      */
@@ -115,17 +115,17 @@ public class Locacao {
     }
 
     /**
-     * Retorna a String completa da locação
+     * Retorna a String completa da locaï¿½ï¿½o
      * 
      * @return
      */
     @Override
     public String toString(){
-        return "Informações da locação: \nCódigo: " + codigo + "\n"
+        return "Informaï¿½ï¿½es da locaï¿½ï¿½o: \nCï¿½digo: " + codigo + "\n"
                + "Cliente: " + cliente.getNome() + "\n"
-               + "Veículo: " + veiculo + "\n"
-               + "Diária: " + diaria + "\n"
+               + "Veï¿½culo: " + veiculo + "\n"
+               + "Diï¿½ria: " + diaria + "\n"
                + "Data inicial: " + dtf.format(dataInicial) + "\n"
-               + "Data final: " + dtf.format(dataFinal) + "\n";
+               + "Data final: " + dataFinal + "\n";
     }
 }

@@ -80,6 +80,8 @@ public class MenuVeiculo {
         String placa;
         int ano;
         double diaria;
+
+		Scanner entrada = new Scanner(System.in);
     	
         do {
         	//menu com as opcoes de tipo de veiculo
@@ -102,7 +104,7 @@ public class MenuVeiculo {
             	// Cor.printf("\tInforme os dados do carro: \n");
           
             	Cor.printf("Placa: ");
-            	placa = in.nextLine();
+				placa = entrada.nextLine();
             	
             	Cor.printf("Ano: ");
             	ano = in.nextInt();
@@ -147,7 +149,7 @@ public class MenuVeiculo {
 				Cor.printf(Color.YELLOW, "\n[VEICULOS - CADASTRAR ÔNIBUS]\n\n");
                     
             	Cor.printf("Placa: ");
-            	placa = in.nextLine();
+            	placa = entrada.nextLine();
             	
             	Cor.printf("Ano: ");
             	ano = in.nextInt();
@@ -202,7 +204,7 @@ public class MenuVeiculo {
                 Cor.printf(Color.YELLOW, "\n[VEICULOS - CADASTRAR CAMINHÃO]\n\n");
 
             	Cor.printf("Placa: ");
-            	placa = in.nextLine();
+            	placa = entrada.nextLine();
             	
             	Cor.printf("Ano: ");
             	ano = in.nextInt();
@@ -227,9 +229,11 @@ public class MenuVeiculo {
     public static void consultaVeiculoPorPlaca() {
     	String placa;
 
+		Scanner entrada = new Scanner(System.in);
+
 		Cor.printf(Color.YELLOW, "\n[VEÍCULOS - CONSULTAR VEÍCULO (POR PLACA)]\n\n");
     	Cor.printf("Informe a placa do veículo: ");
-    	placa = in.nextLine();
+    	placa = entrada.nextLine();
 
     	if(lV.existe(placa)) {
 			Cor.printf("\nInformações do veículo:\n");
