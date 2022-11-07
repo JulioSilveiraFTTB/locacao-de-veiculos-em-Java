@@ -85,16 +85,15 @@ public class MenuLocacao {
 
         do {
             Cor.printf("Possui seguro?\n1 - SIM\n2 - NÃO\n");
-            
             Cor.printf("Informe sua opção: ");
             op = in.nextInt();
-            in.nextLine();
+            
             if(op == 1)
                 seg = Seguro.SIM;
             else if(op == 2)
                 seg = Seguro.NAO;
             else
-                System.out.println("Opção invalida!");
+                System.out.println("\nOpção invalida!\n");
         }while(op != 1 && op != 2);
 
         // Cor.printf("Informe a data Inicial da locação:");

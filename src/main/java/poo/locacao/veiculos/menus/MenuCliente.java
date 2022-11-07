@@ -142,23 +142,23 @@ public class MenuCliente {
         long telefone;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - EDITAR INFORMAÇÕES DO CLIENTE]\n");
-        Cor.printf("Para editar as informações de um cliente, informe o CPF do mesmo: \n");
+        Cor.printf("Para editar as informações de um cliente, informe o CPF do mesmo: ");
         cpf = in.nextLong();
 
         for(Cliente cliente : c.getClientes()){
             if(c.existe(cpf)){
                 Scanner entrada = new Scanner(System.in);
 
-                // Cor.printf("Informe o nome do cliente: \n");
-                // nome = in.nextLine();
+                Cor.printf("Informe o nome do cliente: ");
+                nome = entrada.nextLine();
 
-                Cor.printf("Informe o novo endereço para o cliente: \n");
+                Cor.printf("Informe o novo endereço para o cliente: ");
                 endereco = entrada.nextLine();
     
-                Cor.printf("Informe o novo telefone do cliente: \n");
+                Cor.printf("Informe o novo telefone do cliente: ");
                 telefone = entrada.nextLong();
     
-                // cliente.setNome(nome);
+                cliente.setNome(nome);
                 cliente.setEndereco(endereco);
                 cliente.setTelefone(telefone);
     
@@ -172,12 +172,12 @@ public class MenuCliente {
         long cpf;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - REMOVER CLIENTES]\n");
-        Cor.printf("Informe o CPF do cliente para removê-lo do sistema:");
+        Cor.printf("Informe o CPF do cliente para removê-lo do sistema: ");
         cpf = in.nextLong();
     
         if(c.existe(cpf)) {
             c.remove(cpf);
-            Cor.printf("\nCliente removido!");
+            Cor.printf("\nCliente removido!\n");
         } else
             Cor.printf("\nO CPF informado não está registrado no sistema!\n");
     }
