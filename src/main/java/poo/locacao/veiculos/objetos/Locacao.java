@@ -121,11 +121,11 @@ public class Locacao {
      */
     @Override
     public String toString(){
-        return "Informa��es da loca��o: \nC�digo: " + codigo + "\n"
+        return "Informações da locação: \n" + "Código: " + codigo + "\n"
                + "Cliente: " + cliente.getNome() + "\n"
-               + "Ve�culo: " + veiculo + "\n"
-               + "Di�ria: " + diaria + "\n"
+               + "Veículo: " + veiculo.getPlaca() + "\n"
+               + "Diária: " + diaria + "\n"
                + "Data inicial: " + dtf.format(dataInicial) + "\n"
-               + "Data final: " + dataFinal + "\n";
+               + "Data final: " + dtf.format(dataFinal) + "\n";
     }
 }

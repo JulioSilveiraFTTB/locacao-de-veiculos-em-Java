@@ -32,11 +32,11 @@ public class MenuLocacao {
 
         do{    
             // menu com as op��es dos m�todos
-            Cor.printf(Color.CYAN, "\n[LOCACAO - LOCADORA DE VEICULOS]\n\n");
+            Cor.printf(Color.CYAN, "\n[LOCAÇÃO - LOCADORA DE VEICULOS]\n\n");
             Cor.printf("    1 - Cadastrar nova locação\n");
             Cor.printf("    2 - Consultar locação (por código)\n");
             Cor.printf("    3 - Consultar lista completa de locações\n");
-            Cor.printf("    4 - Edita locação\n");
+            Cor.printf("    4 - Editar locação\n");
             Cor.printf("    5 - Remover locação\n");
             Cor.printf("    6 - Retornar ao menu principal\n");
             Cor.printf("    0 - Sair\n");
@@ -88,8 +88,6 @@ public class MenuLocacao {
 
         Scanner entrada = new Scanner(System.in);
         // Seguro seg = Seguro.NAO;
-        List listaDeClientes = new ArrayList();
-        listaDeClientes.addAll(c.getClientes());
 
         Cor.printf("Informe os dados da locação: \n");
         Cor.printf("CPF: ");
@@ -101,6 +99,7 @@ public class MenuLocacao {
         Cor.printf("Valor da diária: ");
         diaria = in.nextDouble();
 
+        Cor.printf("A data de locação do veículo será automaticamente definida como o dia de hoje.\n");
         Cor.printf("Informe a data de entrega do veículo: ");
         dataFinal1 = entrada.nextLine();
         
@@ -126,18 +125,20 @@ public class MenuLocacao {
 
     public static void cadastroLocacaoCodigo() {
         int codigo;
+
+        Cor.printf(Color.CYAN, "\n[LOCAÇÃO - CADASTRAR NOVA LOCAÇÃO]\n\n");
         Cor.printf("Informe o codigo da locação: ");
         codigo = in.nextInt();
         if(lO.existe(codigo)) {
             Cor.printf("\nEstas são as informações da locação: \n");
-
-        Cor.printf(lO.getInfo(codigo));
+            Cor.printf(lO.getInfo(codigo));
         }else
             Cor.printf("\nEste codigo não esta registrado!\n");
     }
 
     public static void consultaLocacao(){
-        Cor.printf("Estas são as informações das locações:\n");
+        Cor.printf(Color.CYAN, "\n[LOCAÇÃO - CONSULTAR LOCAÇÃO]\n\n");
+        Cor.printf("\nEstas são as informações das locações:\n");
         Cor.printf(lO.getInfo());
     }
 
@@ -146,13 +147,13 @@ public class MenuLocacao {
     
     public static void removeLocacao() {
         int codigo;
-        Cor.printf("Informe o codigo da locação:");
+        Cor.printf(Color.CYAN, "\n[LOCAÇÃO - REMOVER LOCAÇÃO]\n\n");
+        Cor.printf("\nInforme o codigo da locação: ");
         codigo = in.nextInt();
         if(lO.existe(codigo)) {
             Cor.printf(lO.remove(codigo));
-            Cor.printf("\nLocação Removida!\n");
-
-        }else
+            Cor.printf("\nA locação removida!\n");
+        } else
             Cor.printf("\nEsta locação não está registrada!\n");
     }
 }

@@ -186,5 +186,4 @@ public class MenuCliente {
     public static Clientes getC(){
         return c;
     }
-
 }
