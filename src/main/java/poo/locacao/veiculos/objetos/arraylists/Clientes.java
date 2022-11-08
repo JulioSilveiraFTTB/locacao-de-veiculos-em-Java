@@ -78,13 +78,15 @@ public class Clientes implements IClientes {
      */
     @Override
     public String getResumoInfo() {
+        String dado = "";
+
         for (Cliente cliente : c) {
             if (cliente != null) {
                 // criar nova String no Objeto Cliente para diferenciar Info normal de resumida
-                return cliente.toStringResumido();
+                dado+= cliente.toStringResumido() + "\n";
             }
         }
-        return null;
+        return dado;
     }
 
     /**

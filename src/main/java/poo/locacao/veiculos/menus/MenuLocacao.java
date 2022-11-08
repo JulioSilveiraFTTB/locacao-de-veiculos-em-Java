@@ -143,6 +143,25 @@ public class MenuLocacao {
     }
 
     public static void editarLocacao() {
+        String dataFinal1;
+        int codigo;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+
+        Cor.printf(Color.GREEN,"\nLocações - Editar informações da locação\n");
+        Cor.printf("PAra editar as informações da locaçõa, informe o codigo: ");
+        codigo = in.nextInt();
+
+        for(Locacao locacao : lO.getLocacoes()){
+            if(lO.existe(codigo)){
+                Scanner entrada = new Scanner(System.in);
+
+                Cor.printf("Informe a nova data de entrega: ");
+                dataFinal1 = entrada.nextLine();
+                LocalDate dataFinal = LocalDate.parse(dataFinal1, dtf);
+            } else
+                Cor.printf("\nA locação não esta ccadastrada no sistema!\n");
+        }
     }
     
     public static void removeLocacao() {

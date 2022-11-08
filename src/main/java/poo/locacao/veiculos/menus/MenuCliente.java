@@ -146,8 +146,9 @@ public class MenuCliente {
         Cor.printf("Para editar as informações de um cliente, informe o CPF do mesmo: ");
         cpf = in.nextLong();
 
-        for(Cliente cliente : c.getClientes()){
+        // for(Cliente cliente : c.getClientes()){
             if(c.existe(cpf)){
+                cliente = c.get(cpf);
                 Scanner entrada = new Scanner(System.in);
 
                 Cor.printf("Informe o nome do cliente: ");
@@ -163,10 +164,10 @@ public class MenuCliente {
                 cliente.setEndereco(endereco);
                 cliente.setTelefone(telefone);
     
-                c.set(cpf, cliente);
+                // c.set(cpf, cliente);
             } else
                 Cor.printf("\nO cliente não está cadastrado no sistema!\n");
-        }
+        // }
     }
 
     public static void removeCliente() {
