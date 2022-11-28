@@ -1,53 +1,54 @@
 package poo.locacao.veiculos.objetos.interfaces;
 
 import poo.locacao.veiculos.objetos.Locacao;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoNaoEncontrada;
 
 /**
- * Interface que permite manipular um conjunto de locações.
+ * Interface que permite manipular um conjunto de locaï¿½ï¿½es.
  * @author Aline
  */
 public interface ILocacoes {
     /**
-     * Adiciona uma locação na relação de locações.
-     * @param l Locação a ser inserido.
+     * Adiciona uma locaï¿½ï¿½o na relaï¿½ï¿½o de locaï¿½ï¿½es.
+     * @param l Locaï¿½ï¿½o a ser inserido.
      */
     public void add(Locacao l);
     
     /**
-     * Captura a locação com o codigo informado por parâmetro.
-     * @param codigo Codigo do locação a ser capturado.
-     * @return Locação com o codigo informado ou null caso o codigo não for encontrado.
+     * Captura a locaï¿½ï¿½o com o codigo informado por parï¿½metro.
+     * @param codigo Codigo do locaï¿½ï¿½o a ser capturado.
+     * @return Locaï¿½ï¿½o com o codigo informado ou null caso o codigo nï¿½o for encontrado.
      */
-    public Locacao get(int codigo);
+    public Locacao get(int codigo) throws LocacaoNaoEncontrada;
     
     /**
-     * Captura uma String com as informaçoes da locação com o codigo informado por parâmetro.
-     * @param codigo Codigo da locação a ser capturada.
-     * @return String com as informaçoes da locação com o codigo informado por parâmetro 
-     * ou null caso o codigo não for encontrado.
+     * Captura uma String com as informaï¿½oes da locaï¿½ï¿½o com o codigo informado por parï¿½metro.
+     * @param codigo Codigo da locaï¿½ï¿½o a ser capturada.
+     * @return String com as informaï¿½oes da locaï¿½ï¿½o com o codigo informado por parï¿½metro 
+     * ou null caso o codigo nï¿½o for encontrado.
      */
-    public String getInfo(int codigo);
+    public String getInfo(int codigo) throws LocacaoNaoEncontrada;
     
     /**
-     * Captura uma String com as informaçoes de todas as locações.
-     * @return String com as informaçoes de todas as locações
-     * ou null caso não exista nenhuma locação.
+     * Captura uma String com as informaï¿½oes de todas as locaï¿½ï¿½es.
+     * @return String com as informaï¿½oes de todas as locaï¿½ï¿½es
+     * ou null caso nï¿½o exista nenhuma locaï¿½ï¿½o.
      */
     public String getInfo();
     
     /**
-     * Remove a locação com o codigo igual ao informado por parâmetro.
-     * @param codigo Codigo da locação a ser capturada.
-     * @return True se a locação com o codigo informado por parâmetro foi removida ou
-     * false caso não exista nenhuma locação com o codigo informado. 
+     * Remove a locaï¿½ï¿½o com o codigo igual ao informado por parï¿½metro.
+     * @param codigo Codigo da locaï¿½ï¿½o a ser capturada.
+     * @return True se a locaï¿½ï¿½o com o codigo informado por parï¿½metro foi removida ou
+     * false caso nï¿½o exista nenhuma locaï¿½ï¿½o com o codigo informado. 
      */
     public boolean remove(int codigo);
     
     /**
-     * Verifica se existe uma locação com o codigo informado por parâmetro.
-     * @param codigo Codigo da locação a ser verificada.
-     * @return True se uma locação com o codigo informado for encontrada ou 
-     * false caso não exista nenhuma locação com o codigo informado.
+     * Verifica se existe uma locaï¿½ï¿½o com o codigo informado por parï¿½metro.
+     * @param codigo Codigo da locaï¿½ï¿½o a ser verificada.
+     * @return True se uma locaï¿½ï¿½o com o codigo informado for encontrada ou 
+     * false caso nï¿½o exista nenhuma locaï¿½ï¿½o com o codigo informado.
      */
     public boolean existe(int codigo);    
 }

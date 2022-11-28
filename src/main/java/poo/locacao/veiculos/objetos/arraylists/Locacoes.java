@@ -1,12 +1,14 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Locacao;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoNaoEncontrada;
 import poo.locacao.veiculos.objetos.interfaces.ILocacoes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Locacoes implements ILocacoes {
+    private static final String MENSAGEM = "Locação não foi encontrado.";
     /**
      * Instancia uma nova ArrayList de objetos Locacao
      */
@@ -30,13 +32,13 @@ public class Locacoes implements ILocacoes {
      * @return
      */
     @Override
-    public Locacao get(int codigo) {
+    public Locacao get(int codigo) throws LocacaoNaoEncontrada {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return locacao;
             }
         }
-        return null;
+        throw new LocacaoNaoEncontrada(MENSAGEM);
     }
     
     /**
@@ -45,13 +47,13 @@ public class Locacoes implements ILocacoes {
      * @return
      */
     @Override
-    public String getInfo(int codigo) {
+    public String getInfo(int codigo) throws LocacaoNaoEncontrada {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return locacao.toString();
             }
         }
-        return null;
+        throw new LocacaoNaoEncontrada(MENSAGEM);
     }
 
     /**

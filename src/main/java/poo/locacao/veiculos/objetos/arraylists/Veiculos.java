@@ -1,6 +1,7 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Veiculo;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoNaoEncontrado;
 import poo.locacao.veiculos.objetos.interfaces.IVeiculos;
 
 import java.util.ArrayList;

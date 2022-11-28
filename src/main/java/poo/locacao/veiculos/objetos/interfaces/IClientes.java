@@ -1,6 +1,7 @@
 package poo.locacao.veiculos.objetos.interfaces;
 
 import poo.locacao.veiculos.objetos.Cliente;
+import poo.locacao.veiculos.objetos.excecoes.ClienteNaoEncontrado;
 
 /**
  * Interface que permite a manipula��o de um conjunto de clientes.
@@ -18,7 +19,7 @@ public interface IClientes {
      * @param CPF CPF do cliente a ser capturado.
      * @return Cliente com o CPF informado ou null caso o CPF n�o for encontrado.
      */
-    public Cliente get(long CPF);
+    public Cliente get(long CPF) throws ClienteNaoEncontrado;
     
     /**
      * Captura uma String com as informa�oes do cliente com CPF informado por par�metro.
@@ -26,7 +27,7 @@ public interface IClientes {
      * @return String com as informa�oes do cliente com o CPF informado por par�metro 
      * ou null caso o CPF n�o for encontrado.
      */
-    public String getInfo(long CPF);
+    public String getInfo(long CPF) throws ClienteNaoEncontrado;
     
     /**
      * Captura uma String com as informa�oes de todos os clientes.

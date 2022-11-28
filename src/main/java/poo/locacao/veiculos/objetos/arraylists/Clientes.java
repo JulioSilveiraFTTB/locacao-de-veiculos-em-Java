@@ -1,6 +1,7 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Cliente;
+import poo.locacao.veiculos.objetos.excecoes.ClienteNaoEncontrado;
 import poo.locacao.veiculos.objetos.interfaces.IClientes;
 import poo.locacao.veiculos.objetos.Cor;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Clientes implements IClientes {
+    private static final String MENSAGEM = "Cliente não foi encontrado.";
     /**
      * Instancia uma nova ArrayList de objetos Locacao
      */
@@ -31,13 +33,13 @@ public class Clientes implements IClientes {
      * @return
      */
     @Override
-    public Cliente get(long cpf){
+    public Cliente get(long cpf) throws ClienteNaoEncontrado{
         for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return cliente;
             } 
         }
-        return null;
+        throw new ClienteNaoEncontrado(MENSAGEM);
     }
 
     /**
@@ -47,13 +49,13 @@ public class Clientes implements IClientes {
      * @return
      */
     @Override
-    public String getInfo(long cpf) {
+    public String getInfo(long cpf) throws ClienteNaoEncontrado{
         for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return cliente.toString();
             }
         }
-        return null;
+        throw new ClienteNaoEncontrado(MENSAGEM);
     }
 
     /**
