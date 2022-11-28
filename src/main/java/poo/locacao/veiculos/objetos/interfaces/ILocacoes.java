@@ -1,7 +1,7 @@
 package poo.locacao.veiculos.objetos.interfaces;
 
 import poo.locacao.veiculos.objetos.Locacao;
-import poo.locacao.veiculos.objetos.excecoes.LocacaoNaoEncontrada;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoException;
 
 /**
  * Interface que permite manipular um conjunto de loca��es.
@@ -19,7 +19,7 @@ public interface ILocacoes {
      * @param codigo Codigo do loca��o a ser capturado.
      * @return Loca��o com o codigo informado ou null caso o codigo n�o for encontrado.
      */
-    public Locacao get(int codigo) throws LocacaoNaoEncontrada;
+    public Locacao get(int codigo) throws LocacaoException;
     
     /**
      * Captura uma String com as informa�oes da loca��o com o codigo informado por par�metro.
@@ -27,7 +27,7 @@ public interface ILocacoes {
      * @return String com as informa�oes da loca��o com o codigo informado por par�metro 
      * ou null caso o codigo n�o for encontrado.
      */
-    public String getInfo(int codigo) throws LocacaoNaoEncontrada;
+    public String getInfo(int codigo) throws LocacaoException;
     
     /**
      * Captura uma String com as informa�oes de todas as loca��es.

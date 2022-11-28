@@ -1,7 +1,7 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Cliente;
-import poo.locacao.veiculos.objetos.excecoes.ClienteNaoEncontrado;
+import poo.locacao.veiculos.objetos.excecoes.ClienteException;
 import poo.locacao.veiculos.objetos.interfaces.IClientes;
 import poo.locacao.veiculos.objetos.Cor;
 
@@ -33,13 +33,13 @@ public class Clientes implements IClientes {
      * @return
      */
     @Override
-    public Cliente get(long cpf) throws ClienteNaoEncontrado{
+    public Cliente get(long cpf) throws ClienteException{
         for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return cliente;
             } 
         }
-        throw new ClienteNaoEncontrado(MENSAGEM);
+        throw new ClienteException(MENSAGEM);
     }
 
     /**
@@ -49,13 +49,13 @@ public class Clientes implements IClientes {
      * @return
      */
     @Override
-    public String getInfo(long cpf) throws ClienteNaoEncontrado{
+    public String getInfo(long cpf) throws ClienteException{
         for (Cliente cliente : c) {
             if (cliente.getCpf() == cpf) {
                 return cliente.toString();
             }
         }
-        throw new ClienteNaoEncontrado(MENSAGEM);
+        throw new ClienteException(MENSAGEM);
     }
 
     /**

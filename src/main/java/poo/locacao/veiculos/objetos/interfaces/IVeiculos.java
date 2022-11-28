@@ -1,7 +1,7 @@
 package poo.locacao.veiculos.objetos.interfaces;
 
 import poo.locacao.veiculos.objetos.Veiculo;
-import poo.locacao.veiculos.objetos.excecoes.VeiculoNaoEncontrado;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 
 /**
  * Interface que permite a manipula��o de um conjunto de ve�culos.
@@ -20,7 +20,7 @@ public interface IVeiculos {
      * @param placa Placa do veiculo a ser capturado.
      * @return Veiculo com a placa informada ou null em caso da placa n�o ser encontrada.
      */
-    public Veiculo get(String placa) throws VeiculoNaoEncontrado;
+    public Veiculo get(String placa) throws VeiculoException;
     
     /**
      * Captura uma String com as informa�oes do veiculo com a placa informada por par�metro.
@@ -28,7 +28,7 @@ public interface IVeiculos {
      * @return String com as informa�oes do veiculo com a placa informada por par�metro 
      * ou null em caso da placa n�o ser encontrada.
      */
-    public String getInfo(String placa) throws VeiculoNaoEncontrado;
+    public String getInfo(String placa) throws VeiculoException;
     
     /**
      * Captura uma String com as informa�oes de todos os veiculos.

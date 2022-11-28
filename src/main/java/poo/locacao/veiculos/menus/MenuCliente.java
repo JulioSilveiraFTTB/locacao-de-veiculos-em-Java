@@ -1,6 +1,7 @@
 package poo.locacao.veiculos.menus;
 
 import poo.locacao.veiculos.objetos.arraylists.*;
+import poo.locacao.veiculos.objetos.excecoes.ClienteException;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.Cor;
@@ -15,7 +16,7 @@ public class MenuCliente {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void areaCliente() {
+    public static void areaCliente() throws ClienteException {
        int op;
        boolean defaultRepeat;
        boolean repeat;
@@ -111,7 +112,7 @@ public class MenuCliente {
         c.add(cliente);
     }
 
-    public static void consultaClientePorCpf() {
+    public static void consultaClientePorCpf() throws ClienteException {
         long cpf;
 
         Cor.printf(Color.GREEN, "\n[CLIENTES - CONSULTAR CLIENTE (POR CPF)]\n");
@@ -136,7 +137,7 @@ public class MenuCliente {
         Cor.printf(c.getInfo());
     }
 
-    public static void editarCliente() {
+    public static void editarCliente() throws ClienteException {
         String nome;
         String endereco;
         long cpf;

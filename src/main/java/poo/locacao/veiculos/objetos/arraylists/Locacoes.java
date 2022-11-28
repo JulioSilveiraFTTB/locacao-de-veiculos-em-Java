@@ -1,7 +1,7 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Locacao;
-import poo.locacao.veiculos.objetos.excecoes.LocacaoNaoEncontrada;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoException;
 import poo.locacao.veiculos.objetos.interfaces.ILocacoes;
 
 import java.util.ArrayList;
@@ -32,13 +32,13 @@ public class Locacoes implements ILocacoes {
      * @return
      */
     @Override
-    public Locacao get(int codigo) throws LocacaoNaoEncontrada {
+    public Locacao get(int codigo) throws LocacaoException {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return locacao;
             }
         }
-        throw new LocacaoNaoEncontrada(MENSAGEM);
+        throw new LocacaoException(MENSAGEM);
     }
     
     /**
@@ -47,13 +47,13 @@ public class Locacoes implements ILocacoes {
      * @return
      */
     @Override
-    public String getInfo(int codigo) throws LocacaoNaoEncontrada {
+    public String getInfo(int codigo) throws LocacaoException {
         for (Locacao locacao : listaDeLocacoes) {
             if (locacao.getCodigo() == codigo) {
                 return locacao.toString();
             }
         }
-        throw new LocacaoNaoEncontrada(MENSAGEM);
+        throw new LocacaoException(MENSAGEM);
     }
 
     /**

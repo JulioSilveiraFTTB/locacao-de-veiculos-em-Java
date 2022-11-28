@@ -1,6 +1,9 @@
 package poo.locacao.veiculos.menus;
 
 import poo.locacao.veiculos.objetos.arraylists.*;
+import poo.locacao.veiculos.objetos.excecoes.ClienteException;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoException;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 import poo.locacao.veiculos.objetos.Cor;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.Menu;
@@ -27,7 +30,7 @@ public class MenuLocacao {
 
     private static Scanner in = new Scanner(System.in);
     
-    public static void areaLocacao() {
+    public static void areaLocacao() throws LocacaoException, ClienteException, VeiculoException {
        int op;
 
         do{    
@@ -78,7 +81,7 @@ public class MenuLocacao {
 
     }
     
-    public static void cadastroLocacao(){
+    public static void cadastroLocacao() throws LocacaoException, ClienteException, VeiculoException{
         String placa;
         Long cpf;
         Double diaria;
@@ -123,7 +126,7 @@ public class MenuLocacao {
         System.out.println("\n" + locacao.toString());
     }
 
-    public static void cadastroLocacaoCodigo() {
+    public static void cadastroLocacaoCodigo() throws LocacaoException {
         int codigo;
 
         Cor.printf(Color.CYAN, "\n[LOCAÇÃO - CADASTRAR NOVA LOCAÇÃO]\n\n");

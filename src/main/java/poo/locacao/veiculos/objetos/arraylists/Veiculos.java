@@ -1,13 +1,14 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
 import poo.locacao.veiculos.objetos.Veiculo;
-import poo.locacao.veiculos.objetos.excecoes.VeiculoNaoEncontrado;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 import poo.locacao.veiculos.objetos.interfaces.IVeiculos;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Veiculos implements IVeiculos {
+    private static final String MENSAGEM = "Veículo não foi encontrado.";
     /**
      * Instancia uma nova ArrayList de objetos Veiculo
      */
@@ -30,14 +31,14 @@ public class Veiculos implements IVeiculos {
      * @return
      */
     @Override
-    public Veiculo get(String placa) {
+    public Veiculo get(String placa) throws VeiculoException {
     	if(existe(placa))
     		for (Veiculo veiculo : listaDeVeiculos){
     			if(veiculo.getPlaca().equals(placa)){
     				return veiculo;
     			}
     		}
-        return null;
+        throw new VeiculoException(MENSAGEM);
     }
 
     /**
@@ -47,14 +48,14 @@ public class Veiculos implements IVeiculos {
      * @return
      */
     @Override
-    public String getInfo(String placa) {
+    public String getInfo(String placa) throws VeiculoException {
     	if(existe(placa))
 	        for (Veiculo veiculo : listaDeVeiculos){
 	            if(veiculo.getPlaca().equals(placa)){
 	                return veiculo.toString();
 	            }
 	        }
-        return null;
+        throw new VeiculoException(MENSAGEM);
     }
 
     /**

@@ -1,6 +1,7 @@
 package poo.locacao.veiculos.menus;
 
 import poo.locacao.veiculos.objetos.arraylists.*;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 import poo.locacao.veiculos.objetos.Cor;
 import poo.locacao.veiculos.objetos.tipoveiculo.Caminhao;
 import poo.locacao.veiculos.objetos.tipoveiculo.Carro;
@@ -19,7 +20,7 @@ public class MenuVeiculo {
     private static Veiculo v;
     private static Scanner in = new Scanner(System.in);
     
-    public static void areaVeiculo() {
+    public static void areaVeiculo() throws VeiculoException {
        int op;
        
         do {
@@ -226,7 +227,7 @@ public class MenuVeiculo {
     	} while(op != 0);
     }
     
-    public static void consultaVeiculoPorPlaca() {
+    public static void consultaVeiculoPorPlaca() throws VeiculoException {
     	String placa;
 
 		Scanner entrada = new Scanner(System.in);
