@@ -1,6 +1,9 @@
 package poo.locacao.veiculos;
 
 import poo.locacao.veiculos.objetos.Cor;
+import poo.locacao.veiculos.objetos.excecoes.ClienteException;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoException;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.menus.MenuCliente;
 import poo.locacao.veiculos.menus.MenuVeiculo;
@@ -10,7 +13,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    public static void menuInicial() {
+    public static void menuInicial() throws ClienteException, VeiculoException, LocacaoException {
         int op;
         boolean repeat;
         boolean defaultRepeat;

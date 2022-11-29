@@ -2,6 +2,8 @@ package poo.locacao.veiculos.menus;
 
 import poo.locacao.veiculos.objetos.arraylists.*;
 import poo.locacao.veiculos.objetos.excecoes.ClienteException;
+import poo.locacao.veiculos.objetos.excecoes.LocacaoException;
+import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 import poo.locacao.veiculos.objetos.tipoveiculo.enums.Color;
 import poo.locacao.veiculos.Menu;
 import poo.locacao.veiculos.objetos.Cor;
@@ -16,7 +18,7 @@ public class MenuCliente {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void areaCliente() throws ClienteException {
+    public static void areaCliente() throws ClienteException, VeiculoException, LocacaoException {
        int op;
        boolean defaultRepeat;
        boolean repeat;
