@@ -19,7 +19,6 @@ public class LocacaoException extends Exception {
         return true;
     }
 
-    
     public static boolean nomeValido(String nome) throws IllegalArgumentException {
         if (nome == null || nome.isEmpty() || nome.matches("[0-9]*")) {
             throw new IllegalArgumentException("Nome inválido!");
@@ -34,7 +33,12 @@ public class LocacaoException extends Exception {
         return true;
     }
 
-
+    public static boolean valorDiariaValido(long valorDiariaValido) throws IllegalArgumentException{
+        if ( valorDiariaValido == 0 || valorDiariaValido > 180L){
+            throw new IllegalArgumentException("Valor Diaria inválido!");
+        }
+        return true;
+    }
 
 
 

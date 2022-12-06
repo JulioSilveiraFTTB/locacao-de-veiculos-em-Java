@@ -40,6 +40,12 @@ public class VeiculoException extends Exception {
         return true;
     }
 
+    public static boolean valorDiariaValido(long valorDiariaValido) throws IllegalArgumentException{
+        if ( valorDiariaValido == 0 || valorDiariaValido > 180L){
+            throw new IllegalArgumentException("Valor Diaria inválido!");
+        }
+        return true;
+    }
 
 
 
