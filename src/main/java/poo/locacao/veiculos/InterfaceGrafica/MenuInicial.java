@@ -2,18 +2,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Interface;
+package poo.locacao.veiculos.InterfaceGrafica;
+
+import poo.locacao.veiculos.files.Arquivo;
+import poo.locacao.veiculos.objetos.arraylists.*;
 
 /**
  *
  * @author GUILHERME
  */
 public class MenuInicial extends javax.swing.JFrame {
+    
+    private static Clientes c = new Clientes();
+    
 
     /**
      * Creates new form MenuInicial
      */
     public MenuInicial() {
+        try{
+        c = (Clientes) Arquivo.ler("C:\\Users\\rodrigo\\Downloads\\locacao-de-veiculos-em-Java\\src\\main\\java\\poo\\locacao\\veiculos\\files\\clientes.bin");
+        }catch(Exception e){
+            System.err.println(e.getMessage());
+        }
         initComponents();
     }
 
@@ -34,7 +45,10 @@ public class MenuInicial extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Locação Veiculos");
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 204, 0));
         jLabel1.setText("Menu Inicial");
 
         jButton1.setLabel("Cliente");
@@ -48,6 +62,7 @@ public class MenuInicial extends javax.swing.JFrame {
 
         jButton3.setLabel("Locação");
 
+        jButton4.setForeground(new java.awt.Color(255, 0, 0));
         jButton4.setLabel("Sair");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,22 +78,22 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(160, 160, 160)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4)
                             .addComponent(jButton1)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))))
-                .addContainerGap(165, Short.MAX_VALUE))
+                            .addComponent(jButton2)
+                            .addComponent(jButton3)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel1)))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(57, 57, 57)
                 .addComponent(jLabel1)
-                .addGap(53, 53, 53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -86,7 +101,7 @@ public class MenuInicial extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGap(84, 84, 84))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -108,8 +123,9 @@ public class MenuInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+    new MenuCliente(this.c).setVisible(true);
     this.setVisible(false);
-    new MenuCliente().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

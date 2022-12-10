@@ -13,10 +13,11 @@ public class Clientes implements IClientes {
     /**
      * Instancia uma nova ArrayList de objetos Locacao
      */
-    private List<Cliente> c = new ArrayList<>();
+    private final List<Cliente> c = new ArrayList<>();
 
     /**
      * Adiciona um cliente a lista de clientes
+     * @param cliente
      */
     @Override
     public void add(Cliente cliente) {
@@ -31,6 +32,7 @@ public class Clientes implements IClientes {
      * 
      * @param cpf
      * @return
+     * @throws poo.locacao.veiculos.objetos.excecoes.ClienteException
      */
     @Override
     public Cliente get(long cpf) throws ClienteException{
@@ -47,6 +49,7 @@ public class Clientes implements IClientes {
      * 
      * @param cpf
      * @return
+     * @throws poo.locacao.veiculos.objetos.excecoes.ClienteException
      */
     @Override
     public String getInfo(long cpf) throws ClienteException{
