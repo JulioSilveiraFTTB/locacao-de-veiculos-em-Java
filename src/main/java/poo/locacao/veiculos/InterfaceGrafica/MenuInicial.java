@@ -4,7 +4,7 @@
  */
 package poo.locacao.veiculos.InterfaceGrafica;
 
-import poo.locacao.veiculos.files.Arquivo;
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
 import poo.locacao.veiculos.objetos.arraylists.*;
 
 /**
@@ -19,7 +19,9 @@ public class MenuInicial extends javax.swing.JFrame {
     private static Veiculos v = new Veiculos();
 
     public MenuInicial() {
-        lerListas();
+        this.c = lerListas(this.c);
+        this.l = lerListas(this.l);
+        this.v = lerListas(this.v);
         initComponents();
     }
 
@@ -160,44 +162,6 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
     }
-    private void lerListas(){
-        		try{
-        			Object obj;
-        			obj = Arquivo.ler("ListaClientes.bin");
-        			this.c = (Clientes) obj;
-        		}catch(Exception er) {
-        			System.err.println(er.getMessage());
-        		}
-                        try{
-        			Object obj;
-        			obj = Arquivo.ler("ListaLocacoes.bin");
-        			this.l = (Locacoes) obj;
-        		}catch(Exception er) {
-        			System.err.println(er.getMessage());
-        		}
-                        try{
-        			Object obj;
-        			obj = Arquivo.ler("ListaVeiculos.bin");
-        			this.v = (Veiculos) obj;
-        		}catch(Exception er) {
-        			System.err.println(er.getMessage());
-        		}
-        	}
-    
-    public void gravarListas(Locacoes l) {
-        		try {
-        			Arquivo.gravar(l, "ListaLocacoes.bin");
-        		}catch(Exception er) {
-        			System.err.println(er.getMessage());
-        		}
-        	}
-    public void gravarListas(Veiculos v) {
-        		try {
-        			Arquivo.gravar(v, "ListaVeiculos.bin");
-        		}catch(Exception er) {
-        			System.err.println(er.getMessage());
-        		}
-        	}
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

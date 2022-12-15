@@ -4,20 +4,23 @@
  */
 package poo.locacao.veiculos.InterfaceGrafica;
 
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
 import poo.locacao.veiculos.objetos.arraylists.Clientes;
 
 /**
  *
  * @author GUILHERME
+ * @authot Rodrigo
  */
 public class MenuCliente extends javax.swing.JFrame {
-    private static Clientes c = new Clientes();
+    private static Clientes c;
 
     /**
      * Creates new form Cliente
+     * @param c
      */
     public MenuCliente(Clientes c) {
-        this.c = c;
+        this.c = lerListas(c);
         initComponents();
     }
 

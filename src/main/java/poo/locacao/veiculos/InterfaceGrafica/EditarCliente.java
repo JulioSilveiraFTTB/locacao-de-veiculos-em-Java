@@ -6,6 +6,7 @@ package poo.locacao.veiculos.InterfaceGrafica;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
 import poo.locacao.veiculos.objetos.arraylists.Clientes;
 import poo.locacao.veiculos.objetos.excecoes.ClienteException;
 
@@ -20,7 +21,7 @@ public class EditarCliente extends javax.swing.JFrame {
      * Creates new form EditarCliente
      */
     public EditarCliente(Clientes c) {
-        this.c = c;
+        this.c = lerListas(c);
         initComponents();
     }
 

@@ -1,11 +1,13 @@
 package poo.locacao.veiculos.objetos;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
-public class Locacao {
+public class Locacao implements Serializable{
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+    private static final long serialVersionUID = 3464652128L;
     private final Integer codigo;
     private Cliente cliente;
     private Veiculo veiculo;

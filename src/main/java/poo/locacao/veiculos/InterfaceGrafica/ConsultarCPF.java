@@ -7,6 +7,7 @@ package poo.locacao.veiculos.InterfaceGrafica;
 //import static Interface.CadastrarCliente.c;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
 import poo.locacao.veiculos.objetos.Cliente;
 //import poo.locacao.veiculos.objetos.Cor;
 import poo.locacao.veiculos.objetos.arraylists.Clientes;
@@ -25,7 +26,7 @@ public class ConsultarCPF extends javax.swing.JFrame {
      * Creates new form ConsultarCPF
      */
     public ConsultarCPF(Clientes c) {
-        this.c = c;
+        this.c = lerListas(c);
         initComponents();
     }
 

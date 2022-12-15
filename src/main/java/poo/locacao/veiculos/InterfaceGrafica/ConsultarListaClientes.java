@@ -4,6 +4,7 @@
  */
 package poo.locacao.veiculos.InterfaceGrafica;
 
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
 import poo.locacao.veiculos.objetos.arraylists.Clientes;
 
 /**
@@ -17,7 +18,7 @@ public class ConsultarListaClientes extends javax.swing.JFrame {
      * Creates new form ConsultarListaClientes
      */
     public ConsultarListaClientes(Clientes c) {
-        this.c = c;
+        this.c = lerListas(c);
         initComponents();
         listarClientes();
     }

@@ -8,6 +8,9 @@ import poo.locacao.veiculos.files.Arquivo;
 import poo.locacao.veiculos.objetos.Cliente;
 import poo.locacao.veiculos.objetos.arraylists.Clientes;
 import javax.swing.JOptionPane;
+import static poo.locacao.veiculos.files.GerenciaListas.gravarListas;
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
+
 
 /**
  *
@@ -15,13 +18,13 @@ import javax.swing.JOptionPane;
  */
 public class CadastrarCliente extends javax.swing.JFrame {
 
-        public Clientes c = new Clientes();
+        public Clientes c;
        // public static Cliente cliente;
     /**
      * Creates new form CadastrarCliente
      */
     public CadastrarCliente(Clientes c) {
-        this.c = c;
+        this.c = lerListas(c);
         initComponents();
     }
 
@@ -211,7 +214,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         cliente = new Cliente(nome, endereco, cpf, cnh, telefone);
         System.out.println(cliente.toString());
         this.c.add(cliente);
-        gravarListas();
+        gravarListas(this.c);
         JOptionPane.showMessageDialog(null, "Cliente cadastrado!");
                     
       }else{
@@ -256,13 +259,6 @@ public class CadastrarCliente extends javax.swing.JFrame {
 //        });
 //    }
     
-    public void gravarListas() {
-        		try {
-        			Arquivo.gravar(this.c, "ListaClientes.bin");
-        		}catch(Exception er) {
-        			System.err.println(er.getMessage());
-        		}
-        	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -4,6 +4,7 @@
  */
 package poo.locacao.veiculos.InterfaceGrafica;
 
+import static poo.locacao.veiculos.files.GerenciaListas.lerListas;
 import poo.locacao.veiculos.objetos.arraylists.Clientes;
 
 
@@ -18,7 +19,7 @@ public class ConsultarResumido extends javax.swing.JFrame {
      * @param c
      */
     public ConsultarResumido(Clientes c) {
-        this.c = c;
+        this.c = lerListas(c);
         try{
             jLabel3.setText(c.getResumoInfo());
         }catch(Exception e){

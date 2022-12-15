@@ -1,6 +1,9 @@
 package poo.locacao.veiculos.objetos;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable{
+    private static final long serialVersionUID = 25486284L;
     private String nome;
     private String endereco;
     private long cpf;

@@ -1,6 +1,9 @@
 package poo.locacao.veiculos.objetos;
 
-public abstract class Veiculo {
+import java.io.Serializable;
+
+public abstract class Veiculo implements Serializable{
+    private static final long serialVersionUID = 563114752699L;
     protected String placa;
     protected int ano;
     protected Double diaria;
