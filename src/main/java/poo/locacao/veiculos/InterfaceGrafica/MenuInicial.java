@@ -10,21 +10,16 @@ import poo.locacao.veiculos.objetos.arraylists.*;
 /**
  *
  * @author GUILHERME
+ * @author rodrigo
  */
 public class MenuInicial extends javax.swing.JFrame {
     
     private static Clientes c = new Clientes();
-    
+    private static Locacoes l = new Locacoes();
+    private static Veiculos v = new Veiculos();
 
-    /**
-     * Creates new form MenuInicial
-     */
     public MenuInicial() {
-        try{
-        c = (Clientes) Arquivo.ler("C:\\Users\\rodrigo\\Downloads\\locacao-de-veiculos-em-Java\\src\\main\\java\\poo\\locacao\\veiculos\\files\\clientes.bin");
-        }catch(Exception e){
-            System.err.println(e.getMessage());
-        }
+        lerListas();
         initComponents();
     }
 
@@ -46,6 +41,8 @@ public class MenuInicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Locação Veiculos");
+
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 204, 0));
@@ -163,6 +160,45 @@ public class MenuInicial extends javax.swing.JFrame {
             }
         });
     }
+    private void lerListas(){
+        		try{
+        			Object obj;
+        			obj = Arquivo.ler("ListaClientes.bin");
+        			this.c = (Clientes) obj;
+        		}catch(Exception er) {
+        			System.err.println(er.getMessage());
+        		}
+                        try{
+        			Object obj;
+        			obj = Arquivo.ler("ListaLocacoes.bin");
+        			this.l = (Locacoes) obj;
+        		}catch(Exception er) {
+        			System.err.println(er.getMessage());
+        		}
+                        try{
+        			Object obj;
+        			obj = Arquivo.ler("ListaVeiculos.bin");
+        			this.v = (Veiculos) obj;
+        		}catch(Exception er) {
+        			System.err.println(er.getMessage());
+        		}
+        	}
+    
+    public void gravarListas(Locacoes l) {
+        		try {
+        			Arquivo.gravar(l, "ListaLocacoes.bin");
+        		}catch(Exception er) {
+        			System.err.println(er.getMessage());
+        		}
+        	}
+    public void gravarListas(Veiculos v) {
+        		try {
+        			Arquivo.gravar(v, "ListaVeiculos.bin");
+        		}catch(Exception er) {
+        			System.err.println(er.getMessage());
+        		}
+        	}
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

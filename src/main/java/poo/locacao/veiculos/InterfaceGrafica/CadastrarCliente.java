@@ -70,6 +70,8 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 255, 51));
         jLabel1.setText("CLIENTES - Cadastrar Novos Clientes");
@@ -208,12 +210,8 @@ public class CadastrarCliente extends javax.swing.JFrame {
         telefone = Long.parseLong(jTextField5.getText());
         cliente = new Cliente(nome, endereco, cpf, cnh, telefone);
         System.out.println(cliente.toString());
-        c.add(cliente);
-        try{
-            Arquivo.gravar(this.c, "C:\\Users\\rodrigo\\Downloads\\locacao-de-veiculos-em-Java\\src\\main\\java\\poo\\locacao\\veiculos\\files\\clientes.bin");
-        }catch(Exception e){
-            System.err.println(e.getMessage());
-        }
+        this.c.add(cliente);
+        gravarListas();
         JOptionPane.showMessageDialog(null, "Cliente cadastrado!");
                     
       }else{
@@ -257,6 +255,14 @@ public class CadastrarCliente extends javax.swing.JFrame {
 //            }
 //        });
 //    }
+    
+    public void gravarListas() {
+        		try {
+        			Arquivo.gravar(this.c, "ListaClientes.bin");
+        		}catch(Exception er) {
+        			System.err.println(er.getMessage());
+        		}
+        	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

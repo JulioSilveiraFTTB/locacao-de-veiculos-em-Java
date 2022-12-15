@@ -48,6 +48,8 @@ public class EditarCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Locação Veiculos");
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+
         jLabel1.setForeground(new java.awt.Color(51, 255, 51));
         jLabel1.setText("[CLIENTES - EDITAR INFORMAÇÕES DO CLIENTE]");
 
@@ -168,7 +170,7 @@ public class EditarCliente extends javax.swing.JFrame {
         }
     
     }else
-        jLabel4.setText("O cliente não está cadastrado no sistema!");
+        jLabel4.setText("Cliente não está cadastrado no sistema!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

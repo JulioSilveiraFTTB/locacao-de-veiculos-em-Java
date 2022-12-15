@@ -1,5 +1,6 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
+import java.io.Serializable;
 import poo.locacao.veiculos.objetos.Locacao;
 import poo.locacao.veiculos.objetos.excecoes.LocacaoException;
 import poo.locacao.veiculos.objetos.interfaces.ILocacoes;
@@ -7,7 +8,9 @@ import poo.locacao.veiculos.objetos.interfaces.ILocacoes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Locacoes implements ILocacoes {
+public class Locacoes implements ILocacoes, Serializable {
+    
+    private static final long serialVersionUID = 1L;
     private static final String MENSAGEM = "Locação não foi encontrado.";
     /**
      * Instancia uma nova ArrayList de objetos Locacao

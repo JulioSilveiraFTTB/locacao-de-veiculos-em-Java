@@ -1,5 +1,6 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
+import java.io.Serializable;
 import poo.locacao.veiculos.objetos.Cliente;
 import poo.locacao.veiculos.objetos.excecoes.ClienteException;
 import poo.locacao.veiculos.objetos.interfaces.IClientes;
@@ -8,7 +9,9 @@ import poo.locacao.veiculos.objetos.Cor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Clientes implements IClientes {
+public class Clientes implements IClientes, Serializable {
+    
+    private static final long serialVersionUID = 1L;
     private static final String MENSAGEM = "Cliente não foi encontrado.";
     /**
      * Instancia uma nova ArrayList de objetos Locacao

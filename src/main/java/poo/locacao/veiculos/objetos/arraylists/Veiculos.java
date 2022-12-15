@@ -1,5 +1,6 @@
 package poo.locacao.veiculos.objetos.arraylists;
 
+import java.io.Serializable;
 import poo.locacao.veiculos.objetos.Veiculo;
 import poo.locacao.veiculos.objetos.excecoes.VeiculoException;
 import poo.locacao.veiculos.objetos.interfaces.IVeiculos;
@@ -7,7 +8,9 @@ import poo.locacao.veiculos.objetos.interfaces.IVeiculos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Veiculos implements IVeiculos {
+public class Veiculos implements IVeiculos, Serializable {
+    
+    private static final long serialVersionUID = 0x1L;
     private static final String MENSAGEM = "Veículo não foi encontrado.";
     /**
      * Instancia uma nova ArrayList de objetos Veiculo
